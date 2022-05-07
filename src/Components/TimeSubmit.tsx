@@ -1,9 +1,6 @@
 import { time } from 'console';
 import React, { FunctionComponent, useState } from 'react'
 
-interface RaceData {
-  time: string[]
-}
 
 const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<any>([]);
