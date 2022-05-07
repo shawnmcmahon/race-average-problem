@@ -1,36 +1,43 @@
+import { time } from 'console';
 import React, { FunctionComponent, useState } from 'react'
 
-// interface SyntheicEvent<T> {
-//   currentTarget: EventTarget & T
-// }
-
 interface RaceData {
-  time: string
+  time: string[]
 }
 
 const TimeSubmit:FunctionComponent = () => {
-  const [raceTimes, setRaceTimes] = useState<RaceData[]>([]);
-  const [time, setTime] = useState('');
+  const [raceTimes, setRaceTimes] = useState<any>([]);
+  const [time, setTime] = useState<any>([])
 
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
-    setRaceTimes(event.target.value)
-    console.log(raceTimes)
-  } 
-
-  const handleClear = () => {
+    event.preventDefault();
+    const timeToBeAdded = time;
+    setRaceTimes([...raceTimes, timeToBeAdded])
 
   } 
+
+  const handleClear = (event:React.ChangeEvent<any>) => {
+    event.preventDefault()
+    setRaceTimes([])
+  }  
+
+  const handleInputChange = (event:React.ChangeEvent<any>) => {
+    const target = event.target;
+    const name = target.name;
+
+    setTime(event.target.value);
+  }
 
 
   return (
-    <section className="bg-[#F6F7F7] h-96 w-100">
-      <div className="border-b-2 border-[#E5E7E8] h-full w-100 ml-8 mr-8">
+    <section className="h-96 w-100 bg-[#F6F7F7]">
+      <div className="h-full w-100 ml-8 mr-8 border-b-2 border-[#E5E7E8]">
         <p className="pt-8 font-proximaNovaRegular text-xl text-[#888A8C]">Race Time</p>
         <form>
           <input 
             type="text"
             name="time"
-            value={time}
+            onChange={handleInputChange}
             className="h-14 w-2/6 mt-2 border-[#E5E7E8] border-2 rounded-sm font-proximaNovaRegular focus:outline-none"
             placeholder="ex: 12:01 PM, DAY 3">
           </input>
@@ -41,7 +48,7 @@ const TimeSubmit:FunctionComponent = () => {
           </button>
           <button 
             className="h-14 w-36 sm-12 ml-6 bg-[#EB5821] rounded-md font-proximaNovaRegular text-[#FFFFFF] text-xl"
-            onClick={handleClear}>  
+            onClick={(event) => handleClear(event)}>  
             Clear
           </button>
         </form>
