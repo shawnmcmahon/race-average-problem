@@ -4,7 +4,7 @@ import Results from './Results';
 
 
 const TimeSubmit:FunctionComponent = () => {
-  const [raceTimes, setRaceTimes] = useState<any>([])
+  const [raceTimes, setRaceTimes] = useState<any>(["1"])
   const [time, setTime] = useState<string>('')
 
   const handleSubmit = (event: React.ChangeEvent<any>): void => {

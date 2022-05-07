@@ -1,4 +1,5 @@
 import React, {FunctionComponent} from 'react'
+import Time from './Time';
 
 interface raceTimeProps {
   raceTimes: Array<string>,
@@ -7,13 +8,12 @@ interface raceTimeProps {
 const Results:FunctionComponent<raceTimeProps> = ({raceTimes}) => {
 
   const mapRaceTimesToResults = (raceTimes:Array<string>) => {
-    raceTimes.map((raceTime, index) => {
+    const mappedTimes = raceTimes.map((raceTime, index) => {
       return (
-        <article> 
-          {raceTime}
-        </article>
+        <Time />
       )
     })
+    return mappedTimes
   }
 
   return (
@@ -22,7 +22,7 @@ const Results:FunctionComponent<raceTimeProps> = ({raceTimes}) => {
         <p className="font-proximaNovaBold text-xl">Results</p>
       </section>
       <div>
-        {/* {mapRaceTimesToResults} */}
+        "Fixed"
       </div>
     </section>
   )
