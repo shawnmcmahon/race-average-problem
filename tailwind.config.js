@@ -6,8 +6,8 @@ module.exports = {
     }, 
     extend: {
       fontFamily: {
-        promixaRegular: ["ProximaNova-Regular", "sans-serif"],
-        promixaBold: ["ProximaNova-Bold", "sans-serif"],
+        proximaNovaRegular: ["ProximaNova-Regular", "sans-serif"],
+        proximaNovaBold: ["ProximaNova-Bold", "sans-serif"],
       },
     }
   },

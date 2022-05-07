@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  html {
-    font-family: Proxima Nova, system-ui, sans-serif;
-  }
-} */
-
 @font-face {
   font-family: "ProximaNova-Regular";
   src: url("../src/assets/fonts/ProximaNova-Regular.otf");
