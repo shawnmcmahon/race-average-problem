@@ -4,7 +4,12 @@ module.exports = {
     colors: {
       'slateBlue': '#0C3042',
     }, 
-    extend: {}
+    extend: {
+      fontFamily: {
+        promixaRegular: ["ProximaNova-Regular", "sans-serif"],
+        promixaBold: ["ProximaNova-Bold", "sans-serif"],
+      },
+    }
   },
   plugins: [],
 }

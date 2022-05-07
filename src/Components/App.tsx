@@ -1,13 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FunctionComponent } from 'react';
 import Header from './Header';
+import TimeSubmit from './TimeSubmit';
 
-function App() {
+const App:FunctionComponent = () => {
   return (
-    <div className="">
+    <main className="">
       <Header />
+      <TimeSubmit />
       Hello World
-    </div>
+    </main>
   );
 }
 
