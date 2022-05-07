@@ -1,7 +1,4 @@
-
-
-
-const findAverageTime = (times:Array<any>) => {
+const calculateAverageTime = (times:Array<any>) => {
   let totalHours:number = 0; 
   let averageTime:number = 0;
   let averageTimeInMinutes:number = 0;
@@ -69,4 +66,4 @@ const findAverageTime = (times:Array<any>) => {
   
 }
 
-export default findAverageTime;
+export default calculateAverageTime;
