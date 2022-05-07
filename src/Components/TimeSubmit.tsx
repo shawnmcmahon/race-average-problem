@@ -1,10 +1,20 @@
 import React, { FunctionComponent, useState } from 'react'
 
+// interface SyntheicEvent<T> {
+//   currentTarget: EventTarget & T
+// }
+
+interface RaceData {
+  time: string
+}
+
 const TimeSubmit:FunctionComponent = () => {
-  const [raceTimes, setRaceTimes] = useState([])
+  const [raceTimes, setRaceTimes] = useState<RaceData[]>([]);
+  const [time, setTime] = useState('');
 
-  const handleSubmit = () => {
-
+  const handleSubmit = (event: React.ChangeEvent<any>): void => {
+    setRaceTimes(event.target.value)
+    console.log(raceTimes)
   } 
 
   const handleClear = () => {
@@ -18,12 +28,15 @@ const TimeSubmit:FunctionComponent = () => {
         <p className="pt-8 font-proximaNovaRegular text-xl text-[#888A8C]">Race Time</p>
         <form>
           <input 
+            type="text"
+            name="time"
+            value={time}
             className="h-14 w-2/6 mt-2 border-[#E5E7E8] border-2 rounded-sm font-proximaNovaRegular focus:outline-none"
             placeholder="ex: 12:01 PM, DAY 3">
           </input>
           <button 
             className="h-14 w-36 sm-12 ml-6 bg-[#2A5BD7] rounded-md font-proximaNovaRegular text-[#FFFFFF] text-xl"
-            onClick={handleSubmit}>
+            onClick={(event) => handleSubmit(event)}>
             Submit
           </button>
           <button 
