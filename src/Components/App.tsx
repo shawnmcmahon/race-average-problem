@@ -5,7 +5,7 @@ import TimeSubmit from './TimeSubmit';
 
 const App:FunctionComponent = () => {
   return (
-    <main className="">
+    <main className="w-100 h-screen">
       <Header />
       <TimeSubmit />
       <Results />

@@ -8,7 +8,9 @@ const TimeSubmit:FunctionComponent = () => {
         <form>
           <input className="h-14 w-96 mt-2 border-[#E5E7E8] border-2 rounded-sm font-proximaNovaRegular focus:outline-none">
           </input>
-          <button className="h-14 w-36 ml-6 bg-[#2A5BD7] rounded-md font-proximaNovaRegular text-[#FFFFFF] text-xl">Sumbit</button>
+          <button className="h-14 w-36 ml-6 bg-[#2A5BD7] rounded-md font-proximaNovaRegular text-[#FFFFFF] text-xl">
+            Submit
+          </button>
         </form>
       </div>
     </section>
