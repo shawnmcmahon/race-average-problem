@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 
 const TimeSubmit:FunctionComponent = () => {
   return (
-    <section className="bg-[#F5F6F7] h-96 w-100">
+    <section className="bg-[#F6F7F7] h-96 w-100">
       <div className="border-b-2 border-[#E5E7E8] h-full w-100 ml-8 mr-8">
         <p className="pt-8 font-proximaNovaRegular text-xl text-[#888A8C]">Race Time</p>
         <form>

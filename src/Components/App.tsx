@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Header from './Header';
+import Results from './Results';
 import TimeSubmit from './TimeSubmit';
 
 const App:FunctionComponent = () => {
@@ -7,7 +8,7 @@ const App:FunctionComponent = () => {
     <main className="">
       <Header />
       <TimeSubmit />
-      Hello World
+      <Results />
     </main>
   );
 }
