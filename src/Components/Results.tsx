@@ -23,9 +23,11 @@ const Results:FunctionComponent<raceTimeProps> = ({raceTimes}) => {
 
   return (
     <section className="flex flex-col h-full w-100 bg-[#F6F7F7]">
-      <div className="bg-[#F5F6F7] h-96 w-100 m-8"> 
+      <div className="bg-[#F5F6F7] h-96 w-100 m-8 flex flex-col"> 
         <p className="font-proximaNovaBold text-xl">Results</p>
-        {mapRaceTimesToResults(raceTimes)}
+        <div className="flex flex-row">
+          {mapRaceTimesToResults(raceTimes)}
+        </div>
       </div>
     </section>
   )
