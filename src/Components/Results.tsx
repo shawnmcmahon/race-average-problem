@@ -1,19 +1,21 @@
-import React, {FunctionComponent} from 'react'
+import React, {FunctionComponent, ReactElement} from 'react'
 
 interface raceTimeProps {
-  raceTimes: Array<string>,
+  raceTimes: ReactElement | Array<string>,
 }
 
 const Results:FunctionComponent<raceTimeProps> = ({raceTimes}) => {
 
-  const mapRaceTimesToResults = (raceTimes:Array<string>) => {
-    raceTimes.map((raceTime, index) => {
+  const mapRaceTimesToResults = (raceTimes: any) => {
+    const mappedTimes = raceTimes.map((raceTime: string) => {
       return (
         <article> 
           {raceTime}
         </article>
       )
     })
+
+    return mappedTimes
   }
 
   return (
@@ -22,7 +24,7 @@ const Results:FunctionComponent<raceTimeProps> = ({raceTimes}) => {
         <p className="font-proximaNovaBold text-xl">Results</p>
       </section>
       <div>
-        {/* {mapRaceTimesToResults} */}
+        {mapRaceTimesToResults(raceTimes)}
       </div>
     </section>
   )
