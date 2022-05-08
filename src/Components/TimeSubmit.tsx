@@ -10,19 +10,20 @@ const TimeSubmit:FunctionComponent = () => {
   const [formattedRaceTimes, setFormattedRaceTimes] = useState<any>([])
   const [time, setTime] = useState<string>('')
   const [timeInHours, setTimeInHours] = useState<number>(0)
+  const [timeInMinutes, setTimeInMinutes] = useState<number>(0)
   const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
-  const [averageTimeInHours, setAverageTimeInHours] = useState<number>(0)
+  const [averageTimeInHours, setAverageTimeInHours] = useState<number>(averageTimeInMinutes / 60)
 
   useEffect(() => {
-    calculateAverageAndUpdateState()
+    // calculateAverageAndUpdateState()
     setFormattedRaceTimes([...raceTimes])
     setRaceTimes(formattedRaceTimes)
   }, [])
 
   const calculateAverageAndUpdateState = () => {
     setAverageTimeInMinutes(calculateAverageTime(raceTimes))
-    const averageTimeInHours = parseInt((averageTimeInMinutes / 60).toFixed(2))
-    setAverageTimeInHours(averageTimeInHours)
+    // const timeInHours = parseInt((averageTimeInMinutes / 60).toFixed(2))
+    // setAverageTimeInHours(timeInHours)
   }
   
   
@@ -32,6 +33,8 @@ const TimeSubmit:FunctionComponent = () => {
     const timeToBeAdded = time
     setRaceTimes([...raceTimes, timeToBeAdded])
     setTimeInHours(calculateRaceTime(timeToBeAdded))
+    setTimeInMinutes(calculateRaceTime(timeToBeAdded))
+    // console.log('test', calculateRaceTime(timeToBeAdded))
     calculateAverageAndUpdateState()
   } 
 
@@ -41,6 +44,8 @@ const TimeSubmit:FunctionComponent = () => {
     setAverageTimeInMinutes(0)
     setAverageTimeInHours(0)
     setTimeInHours(0)
+    setTimeInMinutes(0)
+    setTime('')
   }  
 
   const handleInputChange = (event:React.ChangeEvent<any>): void  => {
@@ -65,6 +70,7 @@ const TimeSubmit:FunctionComponent = () => {
               onChange={handleInputChange}
               type="text"
               name="time"
+              value={time}
               placeholder="ex: 08:01 PM, DAY 3">
             </input>
             <button 
@@ -81,7 +87,8 @@ const TimeSubmit:FunctionComponent = () => {
             <p className="pt-8 mt-4 font-proximaNovaRegular text-xl text-[#888A8C]">Average Time</p>
           <section className="bg-[#F6F7F7] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
             <p className="text-center text-lg text-[#00000]">
-              {averageTimeInMinutes === 0 ? (timeInHours * 60) + " minutes" : averageTimeInMinutes + " minutes"}
+              {averageTimeInMinutes === 0 ? Math.round((timeInMinutes)) + " minutses" : Math.round(timeInMinutes) + " minutes"} <br/>
+              {/* {averageTimeInMinutes === 0 ? timeInHours + " hours" : averageTimeInHours + " hours"} */}
             </p>
           </section>
         </div>

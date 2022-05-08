@@ -1,8 +1,7 @@
 const calculateRaceTime = (time:any) => {
   let totalHours:number = 0; 
-  let times = [time]
-
-  let format = times
+  let totalMinutes:number =0;
+  let times = [time];
 
 
   for (let i = 0; i < times.length; i++) {
@@ -45,18 +44,19 @@ const calculateRaceTime = (time:any) => {
   // If the minutes are not 0, then turn seconds into fractions of hours
     if (times[i][0][1] !== 0) {
       // Divide by number of minutes in an hour. Round to 3rd decimal point. Change back to a float
-      times[i][0][1] = parseFloat((times[i][0][1] / 60).toFixed(2))
+      times[i][0][1] = parseFloat((times[i][0][1] / 60).toFixed(3))
     }
   
   // Add that amount of hours to a variable called total hours 
   totalHours += times[i][0][0];
-  totalHours += times[i][0][1]
+  totalHours += times[i][0][1];
   
   }
 
-  times = format;
+  totalMinutes = totalHours * 60;
 
-  return totalHours;
+  console.log('raceTime has run', totalHours)
+  return totalMinutes;
 
 }
 
