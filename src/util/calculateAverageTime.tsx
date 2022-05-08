@@ -4,14 +4,12 @@ const calculateAverageTime = (times:Array<any>) => {
   let averageTimeInMinutes:number = 0;
 
   let format = times
-  console.log('format', format)
 
   // The basic premise of my solution is to convert the time into military time,
   // to check for edge cases with 1 and 2 day race times, and calculate the average.    
 
   // for loop through the times array 
   for (let i = 0; i < times.length; i++) {
-    console.log('times in calc logic pre for loop', times)
   
     
     // Split the time array by spaces to create a specific time arrays
@@ -69,7 +67,6 @@ const calculateAverageTime = (times:Array<any>) => {
 
 
   }
-  console.log('times in calc end of for loop', format)
 
   times = format;
 

@@ -56,7 +56,6 @@ const calculateRaceTime = (time:any) => {
 
   times = format;
 
-  console.log(totalHours)
   return totalHours;
 
 }
