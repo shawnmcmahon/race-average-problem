@@ -40,6 +40,7 @@ const TimeSubmit:FunctionComponent = () => {
     setRaceTimes([])
     setAverageTimeInMinutes(0)
     setAverageTimeInHours(0)
+    setTimeInHours(0)
   }  
 
   const handleInputChange = (event:React.ChangeEvent<any>): void  => {
@@ -78,7 +79,7 @@ const TimeSubmit:FunctionComponent = () => {
             </button>
           </form>
             <p className="pt-8 mt-4 font-proximaNovaRegular text-xl text-[#888A8C]">Average Time</p>
-          <section className="bg-[#FFFFFF] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
+          <section className="bg-[#F6F7F7] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
             <p className="text-center text-lg text-[#00000]">
               {averageTimeInMinutes === 0 ? (timeInHours * 60) + " minutes" : averageTimeInMinutes + " minutes"}
             </p>
