@@ -48,7 +48,7 @@ const TimeSubmit:FunctionComponent = () => {
           <p className="pt-8 font-proximaNovaRegular text-xl text-[#888A8C]">Race Time</p>
           <form>
             <input 
-              className="h-14 w-2/6 mt-2 border-[#E5E7E8] border-2 rounded-sm font-proximaNovaRegular focus:outline-none"
+              className="h-12 w-2/6 max-w-lg mt-2 pl-4 border-[#E5E7E8] border-2 rounded-sm font-proximaNovaRegular focus:outline-none"
               onChange={handleInputChange}
               type="text"
               name="time"
