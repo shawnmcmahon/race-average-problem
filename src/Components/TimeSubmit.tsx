@@ -27,16 +27,18 @@ const TimeSubmit:FunctionComponent = () => {
   }  
 
   const handleInputChange = (event:React.ChangeEvent<any>): void  => {
-    const target = event.target;
-    const name = target.name;
     setTime(event.target.value);
   }
 
-  // Need to come back to this to check date formate
+  // Having trouble with the Regex format for the date
 
   // const checkForFormatIssues = (input: any) => {
   //   const regex =/^[0-1]{1}[0-9]{2}:[0-9]{2}\s[A-Z]{2},\s[A-Z]{3}\s[0-9]{1}/
   // }
+
+  const calculateDifferenceFromAverage = () => {
+
+  }
 
 
   return (
@@ -63,8 +65,9 @@ const TimeSubmit:FunctionComponent = () => {
               Clear
             </button>
           </form>
-          <section className="bg-[#FFFFFF] h-16 w-48 mt-16 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
-            <p className="text-center text-lg text-[#00000]">Average Time <br/>{averageTimeInMinutes} minutes <br/> {averageTimeInHours} hours</p>
+            <p className="pt-8 mt-4 font-proximaNovaRegular text-xl text-[#888A8C]">Average Time</p>
+          <section className="bg-[#FFFFFF] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
+            <p className="text-center text-lg text-[#00000">{averageTimeInMinutes} minutes <br/> {averageTimeInHours} hours</p>
           </section>
         </div>
       </section>

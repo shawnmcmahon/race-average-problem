@@ -20,7 +20,7 @@ const Time:FunctionComponent<timeProps> = ({raceTime, index}) => {
           <p className="text-left text-sm text-[#EB5821]">+01.03</p>
         </div>
         <div className="flex justify-end bg-[#FFF] w-2/4 pr-2 pb-2">   
-          <p className="text-right text-lg pr-2 text-[#888A8C]">
+          <p className="text-right text-lg pr-2 text-[#000000]">
             {(index + 1)}
           </p>
           <img 

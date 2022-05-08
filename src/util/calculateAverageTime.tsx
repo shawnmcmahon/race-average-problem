@@ -17,19 +17,19 @@ const calculateAverageTime = (times:Array<any>) => {
       times[i][0][1] = parseInt(times[i][0][1])
       times[i][3] = parseInt(times[i][3])
       
-    // If index 1 is equal to pm and does not equal 12
+    // If the time of day is equal to pm and the hour is not 12
     if (times[i][0][0] !== 12 && times[i][1].includes('P')) {
-      // then we need to turn the time into military time by adding 12 to index 1 
+      // then we need to turn the time into military time by adding 12 to the hour
         times[i][0][0] += 12
-        // If index 3 is equal to 1 and index 1 does not equal 12
+        // If the day is equal to 1 and the hour is not 12
     } else if (times[i][0][0] !== 12 && times[i][3] === 1 ) {
-    // then we subtract the military time minus 8 
+    // then we subtract 8 hours
       times[i][0][0] -= 8
     } else if (times[i][3] === 1 && times[i][1].includes('P')) {
       times[i][0][0] -= 8
     } 
 
-  // if index is not equal to 1 
+  // if the time is greater than 1 day and the time of day is PM
     if (times[i][3] > 1 && times[i][1].includes('P')) {
       // then we add 16 hours (because that is the entire amount of hours in day 1)
       times[i][0][0] += 16   
