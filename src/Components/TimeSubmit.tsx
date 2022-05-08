@@ -1,12 +1,13 @@
-import { time } from 'console';
 import React, { FunctionComponent, useState } from 'react'
 import Results from './Results';
 import calculateAverageTime from '../util/calculateAverageTime';
+import calculateRaceTime from '../util/calculateRaceTime';
 
 
 const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<any>([])
   const [time, setTime] = useState<string>('')
+  const [timeInHours, setTimeInHours] = useState<number>(0)
   const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0);
   const [averageTimeInHours, setAverageTimeInHours] = useState<number>(0)
 
@@ -17,6 +18,7 @@ const TimeSubmit:FunctionComponent = () => {
     setRaceTimes([...raceTimes, timeToBeAdded])
     setAverageTimeInMinutes(calculateAverageTime(raceTimes));
     setAverageTimeInHours(Math.round(averageTimeInMinutes / 60));
+    setTimeInHours(calculateRaceTime(timeToBeAdded))
   } 
 
   const handleClear = (event:React.ChangeEvent<any>): void  => {
@@ -35,10 +37,6 @@ const TimeSubmit:FunctionComponent = () => {
   // const checkForFormatIssues = (input: any) => {
   //   const regex =/^[0-1]{1}[0-9]{2}:[0-9]{2}\s[A-Z]{2},\s[A-Z]{3}\s[0-9]{1}/
   // }
-
-  const calculateDifferenceFromAverage = () => {
-
-  }
 
 
   return (
@@ -71,7 +69,11 @@ const TimeSubmit:FunctionComponent = () => {
           </section>
         </div>
       </section>
-      <Results raceTimes={raceTimes}/>
+      <Results 
+        raceTimes={raceTimes}
+        averageTimeInHours={averageTimeInHours}
+        timeInHours={timeInHours}
+      />
     </>
   )
 }

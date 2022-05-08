@@ -1,17 +1,22 @@
 import React, {FunctionComponent} from 'react'
+import { NamedTupleMember } from 'typescript'
 import Time from './Time'
 
 interface raceTimeProps {
   raceTimes: Array<string>,
+  averageTimeInHours: number, 
+  timeInHours: number
 }
 
-const Results:FunctionComponent<raceTimeProps> = ({raceTimes}) => {
+const Results:FunctionComponent<raceTimeProps> = ({raceTimes, averageTimeInHours, timeInHours}) => {
 
   const mapRaceTimesToResults = (raceTimes: Array<string>) => {
     const mappedTimes = raceTimes.map((raceTime: string, index: number) => {
       return (
           <Time 
             raceTime={raceTime}
+            averageTimeInHours={averageTimeInHours}
+            timeInHours={timeInHours}
             key={index}
             index={index}
           />
