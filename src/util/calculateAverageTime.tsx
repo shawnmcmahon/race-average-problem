@@ -3,11 +3,15 @@ const calculateAverageTime = (times:Array<any>) => {
   let averageTime:number = 0;
   let averageTimeInMinutes:number = 0;
 
+  const correctFormatTimes = times;
+
+
   // The basic premise of my solution is to convert the time into military time,
   // to check for edge cases with 1 and 2 day race times, and calculate the average.    
-  
+
   // for loop through the times array 
   for (let i = 0; i < times.length; i++) {
+    
     // Split the time array by spaces to create a specific time arrays
       times[i] = times[i].split(' ')
     // Create a sub array in index 0 for the clock time format
@@ -60,8 +64,13 @@ const calculateAverageTime = (times:Array<any>) => {
   // Convert to minutes and round
   averageTimeInMinutes = Math.round(averageTime * 60)
 
+
+
   }
-  
+
+  console.log('times in calc', correctFormatTimes)
+  times = correctFormatTimes;
+
   return averageTimeInMinutes;
   
 }

@@ -21,7 +21,7 @@ const Time:FunctionComponent<timeProps> = ({raceTime, averageTimeInHours, timeIn
       </section>
       <section className="flex h-full">
         <div className="bg-[#FFFFFF] w-2/4 pl-4 pb-2">   
-          <p className="text-left text-sm text-[#EB5821]">{timeDifferenceFromAverage}</p>
+          {/* <p className="text-left text-sm text-[#EB5821]">{timeDifferenceFromAverage}</p> */}
         </div>
         <div className="flex justify-end bg-[#FFF] w-2/4 pr-2 pb-2">   
           <p className="text-right text-lg pr-2 text-[#000000]">

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react'
+import React, { FunctionComponent, useState, useEffect } from 'react'
 import Results from './Results';
 import calculateAverageTime from '../util/calculateAverageTime';
 import calculateRaceTime from '../util/calculateRaceTime';
@@ -6,19 +6,29 @@ import calculateRaceTime from '../util/calculateRaceTime';
 
 const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<any>([])
+  const [correctlyFormattedRaceTimes, setCorrectlyFormattedRaceTimes] = useState<any>([])
   const [time, setTime] = useState<string>('')
   const [timeInHours, setTimeInHours] = useState<number>(0)
   const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
   const [averageTimeInHours, setAverageTimeInHours] = useState<number>(0)
 
+  useEffect(() => {
+
+  }, [])
+
+
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
     event.preventDefault()
     const timeToBeAdded = time
+    const correctlyFormattedTimes = [...raceTimes, timeToBeAdded];
     // checkForFormatIssues(timeToBeAdded)
     setRaceTimes([...raceTimes, timeToBeAdded])
+    setCorrectlyFormattedRaceTimes([...raceTimes, timeToBeAdded])
     setAverageTimeInMinutes(calculateAverageTime(raceTimes))
-    setAverageTimeInHours(Math.round(averageTimeInMinutes / 60))
+    const averageTimeInHours = parseInt((averageTimeInMinutes / 60).toString())
+    setAverageTimeInHours(averageTimeInHours)
     setTimeInHours(calculateRaceTime(timeToBeAdded))
+    setRaceTimes(correctlyFormattedRaceTimes)
   } 
 
   const handleClear = (event:React.ChangeEvent<any>): void  => {
@@ -65,7 +75,7 @@ const TimeSubmit:FunctionComponent = () => {
           </form>
             <p className="pt-8 mt-4 font-proximaNovaRegular text-xl text-[#888A8C]">Average Time</p>
           <section className="bg-[#FFFFFF] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
-            <p className="text-center text-lg text-[#00000">{averageTimeInMinutes} minutes <br/> {averageTimeInHours} hours</p>
+            <p className="text-center text-lg text-[#00000]">{averageTimeInMinutes} minutes <br/> {averageTimeInHours} hours</p>
           </section>
         </div>
       </section>
