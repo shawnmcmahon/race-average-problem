@@ -6,29 +6,32 @@ import calculateRaceTime from '../util/calculateRaceTime';
 
 const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<any>([])
-  const [correctlyFormattedRaceTimes, setCorrectlyFormattedRaceTimes] = useState<any>([])
+  const [formattedRaceTimes, setFormattedRaceTimes] = useState<any>([])
   const [time, setTime] = useState<string>('')
   const [timeInHours, setTimeInHours] = useState<number>(0)
   const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
   const [averageTimeInHours, setAverageTimeInHours] = useState<number>(0)
 
   useEffect(() => {
-
-  }, [])
-
-
+    setAverageTimeInMinutes(calculateAverageTime(raceTimes))
+    const averageTimeInHours = parseInt((averageTimeInMinutes / 60).toFixed(2))
+    setAverageTimeInHours(averageTimeInHours)
+    setFormattedRaceTimes([...raceTimes])
+    // setRaceTimes(formattedRaceTimes)
+    
+    
+  }, [time])
+  
+  
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
     event.preventDefault()
+    setFormattedRaceTimes([...raceTimes, time])
     const timeToBeAdded = time
-    const correctlyFormattedTimes = [...raceTimes, timeToBeAdded];
-    // checkForFormatIssues(timeToBeAdded)
     setRaceTimes([...raceTimes, timeToBeAdded])
-    setCorrectlyFormattedRaceTimes([...raceTimes, timeToBeAdded])
-    setAverageTimeInMinutes(calculateAverageTime(raceTimes))
-    const averageTimeInHours = parseInt((averageTimeInMinutes / 60).toString())
-    setAverageTimeInHours(averageTimeInHours)
     setTimeInHours(calculateRaceTime(timeToBeAdded))
-    setRaceTimes(correctlyFormattedRaceTimes)
+    setAverageTimeInMinutes(calculateAverageTime(raceTimes))
+    const averageTimeInHours = parseInt((averageTimeInMinutes / 60).toFixed(2))
+    setAverageTimeInHours(averageTimeInHours)
   } 
 
   const handleClear = (event:React.ChangeEvent<any>): void  => {

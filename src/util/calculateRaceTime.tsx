@@ -1,6 +1,8 @@
 const calculateRaceTime = (time:any) => {
   let totalHours:number = 0; 
-  const times = [time]
+  let times = [time]
+
+  let format = times
 
 
   for (let i = 0; i < times.length; i++) {
@@ -51,6 +53,8 @@ const calculateRaceTime = (time:any) => {
   totalHours += times[i][0][1]
   
   }
+
+  times = format;
 
   console.log(totalHours)
   return totalHours;
