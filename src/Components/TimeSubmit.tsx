@@ -8,7 +8,7 @@ const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<any>([])
   const [time, setTime] = useState<string>('')
   const [timeInHours, setTimeInHours] = useState<number>(0)
-  const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0);
+  const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
   const [averageTimeInHours, setAverageTimeInHours] = useState<number>(0)
 
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
@@ -16,8 +16,8 @@ const TimeSubmit:FunctionComponent = () => {
     const timeToBeAdded = time
     // checkForFormatIssues(timeToBeAdded)
     setRaceTimes([...raceTimes, timeToBeAdded])
-    setAverageTimeInMinutes(calculateAverageTime(raceTimes));
-    setAverageTimeInHours(Math.round(averageTimeInMinutes / 60));
+    setAverageTimeInMinutes(calculateAverageTime(raceTimes))
+    setAverageTimeInHours(Math.round(averageTimeInMinutes / 60))
     setTimeInHours(calculateRaceTime(timeToBeAdded))
   } 
 
@@ -29,7 +29,7 @@ const TimeSubmit:FunctionComponent = () => {
   }  
 
   const handleInputChange = (event:React.ChangeEvent<any>): void  => {
-    setTime(event.target.value);
+    setTime(event.target.value)
   }
 
   // Having trouble with the Regex format for the date
@@ -40,7 +40,7 @@ const TimeSubmit:FunctionComponent = () => {
 
 
   return (
-    <>
+    <div>
       <section className="h-96 w-100 bg-[#F6F7F7]">
         <div className="h-full w-100 ml-8 mr-8 border-b-2 border-[#E5E7E8]">
           <p className="pt-8 font-proximaNovaRegular text-xl text-[#888A8C]">Race Time</p>
@@ -74,7 +74,7 @@ const TimeSubmit:FunctionComponent = () => {
         averageTimeInHours={averageTimeInHours}
         timeInHours={timeInHours}
       />
-    </>
+    </div>
   )
 }
 
