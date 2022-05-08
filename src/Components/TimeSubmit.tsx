@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState, useEffect } from 'react'
 import Results from './Results';
 import calculateAverageTime from '../util/calculateAverageTime';
 import calculateRaceTime from '../util/calculateRaceTime';
+import { timeEnd } from 'console';
 
 
 const TimeSubmit:FunctionComponent = () => {
@@ -13,14 +14,16 @@ const TimeSubmit:FunctionComponent = () => {
   const [averageTimeInHours, setAverageTimeInHours] = useState<number>(0)
 
   useEffect(() => {
+    calculateAverageAndUpdateState()
+    setFormattedRaceTimes([...raceTimes])
+    setRaceTimes(formattedRaceTimes)
+  }, [])
+
+  const calculateAverageAndUpdateState = () => {
     setAverageTimeInMinutes(calculateAverageTime(raceTimes))
     const averageTimeInHours = parseInt((averageTimeInMinutes / 60).toFixed(2))
     setAverageTimeInHours(averageTimeInHours)
-    setFormattedRaceTimes([...raceTimes])
-    // setRaceTimes(formattedRaceTimes)
-    
-    
-  }, [time])
+  }
   
   
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
@@ -29,9 +32,7 @@ const TimeSubmit:FunctionComponent = () => {
     const timeToBeAdded = time
     setRaceTimes([...raceTimes, timeToBeAdded])
     setTimeInHours(calculateRaceTime(timeToBeAdded))
-    setAverageTimeInMinutes(calculateAverageTime(raceTimes))
-    const averageTimeInHours = parseInt((averageTimeInMinutes / 60).toFixed(2))
-    setAverageTimeInHours(averageTimeInHours)
+    calculateAverageAndUpdateState()
   } 
 
   const handleClear = (event:React.ChangeEvent<any>): void  => {
@@ -78,7 +79,9 @@ const TimeSubmit:FunctionComponent = () => {
           </form>
             <p className="pt-8 mt-4 font-proximaNovaRegular text-xl text-[#888A8C]">Average Time</p>
           <section className="bg-[#FFFFFF] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
-            <p className="text-center text-lg text-[#00000]">{averageTimeInMinutes} minutes <br/> {averageTimeInHours} hours</p>
+            <p className="text-center text-lg text-[#00000]">
+              {averageTimeInMinutes === 0 ? (timeInHours * 60) + " minutes" : averageTimeInMinutes + " minutes"}
+            </p>
           </section>
         </div>
       </section>
