@@ -1,22 +1,29 @@
 import { time } from 'console';
 import React, { FunctionComponent, useState } from 'react'
 import Results from './Results';
+import calculateAverageTime from '../util/calculateAverageTime';
 
 
 const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<any>([])
   const [time, setTime] = useState<string>('')
+  const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0);
+  const [averageTimeInHours, setAverageTimeInHours] = useState<number>(0)
 
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
     event.preventDefault()
     const timeToBeAdded = time
-    // checkForFormatInssues(timeToBeAdded)
+    // checkForFormatIssues(timeToBeAdded)
     setRaceTimes([...raceTimes, timeToBeAdded])
+    setAverageTimeInMinutes(calculateAverageTime(raceTimes));
+    setAverageTimeInHours(Math.round(averageTimeInMinutes / 60));
   } 
 
   const handleClear = (event:React.ChangeEvent<any>): void  => {
     event.preventDefault()
     setRaceTimes([])
+    setAverageTimeInMinutes(0)
+    setAverageTimeInHours(0)
   }  
 
   const handleInputChange = (event:React.ChangeEvent<any>): void  => {
@@ -27,13 +34,8 @@ const TimeSubmit:FunctionComponent = () => {
 
   // Need to come back to this to check date formate
 
-  // const checkForFormatInssues = (input: any) => {
-  //   for (let i = 0; i < input.length; i++) {
-  //     if (input[0] !== '0' || '1') {
-  //       console.log(input[i])
-  //       console.log("Please follow format listed in input box placeholder")
-  //     }
-  //   }
+  // const checkForFormatIssues = (input: any) => {
+  //   const regex =/^[0-1]{1}[0-9]{2}:[0-9]{2}\s[A-Z]{2},\s[A-Z]{3}\s[0-9]{1}/
   // }
 
 
@@ -61,6 +63,9 @@ const TimeSubmit:FunctionComponent = () => {
               Clear
             </button>
           </form>
+          <section className="bg-[#FFFFFF] h-16 w-48 mt-16 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
+            <p className="text-center text-lg text-[#00000]">Average Time <br/>{averageTimeInMinutes} minutes <br/> {averageTimeInHours} hours</p>
+          </section>
         </div>
       </section>
       <Results raceTimes={raceTimes}/>
