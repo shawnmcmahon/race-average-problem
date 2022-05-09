@@ -53,7 +53,7 @@ const calculateRaceTime = (time:any) => {
   
   }
 
-  totalMinutes = totalHours * 60;
+  totalMinutes = Math.round(totalHours * 60);
 
   console.log('raceTime has run', totalHours)
   return totalMinutes;

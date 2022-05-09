@@ -18,7 +18,7 @@ const TimeSubmit:FunctionComponent = () => {
     // calculateAverageAndUpdateState()
     setFormattedRaceTimes([...raceTimes])
     setRaceTimes(formattedRaceTimes)
-  }, [])
+  }, [averageTimeInMinutes])
 
   const calculateAverageAndUpdateState = () => {
     setAverageTimeInMinutes(calculateAverageTime(raceTimes))
@@ -26,13 +26,12 @@ const TimeSubmit:FunctionComponent = () => {
     // setAverageTimeInHours(timeInHours)
   }
   
-  
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
     event.preventDefault()
     setFormattedRaceTimes([...raceTimes, time])
     const timeToBeAdded = time
     setRaceTimes([...raceTimes, timeToBeAdded])
-    setTimeInHours(calculateRaceTime(timeToBeAdded))
+    // setTimeInHours(calculateRaceTime(timeToBeAdded))
     setTimeInMinutes(calculateRaceTime(timeToBeAdded))
     // console.log('test', calculateRaceTime(timeToBeAdded))
     calculateAverageAndUpdateState()
@@ -87,7 +86,7 @@ const TimeSubmit:FunctionComponent = () => {
             <p className="pt-8 mt-4 font-proximaNovaRegular text-xl text-[#888A8C]">Average Time</p>
           <section className="bg-[#F6F7F7] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
             <p className="text-center text-lg text-[#00000]">
-              {averageTimeInMinutes === 0 ? Math.round((timeInMinutes)) + " minutses" : Math.round(timeInMinutes) + " minutes"} <br/>
+              {raceTimes.length === 1 ? timeInMinutes + " minutes" : Math.round(averageTimeInMinutes) + " minutes"} <br/>
               {/* {averageTimeInMinutes === 0 ? timeInHours + " hours" : averageTimeInHours + " hours"} */}
             </p>
           </section>

@@ -61,7 +61,7 @@ const calculateAverageTime = (times:Array<any>) => {
   averageTime = totalHours / times.length
 
   // Convert to minutes and round
-  averageTimeInMinutes = averageTime * 60
+  averageTimeInMinutes = Math.round(averageTime * 60)
 
 
   console.log(averageTime)
