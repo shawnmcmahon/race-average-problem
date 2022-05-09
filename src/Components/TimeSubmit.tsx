@@ -1,22 +1,40 @@
-import { time } from 'console';
-import React, { FunctionComponent, useState } from 'react'
+import React, { FunctionComponent, useState, useEffect } from 'react'
 import Results from './Results';
 import calculateAverageTime from '../util/calculateAverageTime';
+import calculateRaceTime from '../util/calculateRaceTime';
+import { timeEnd } from 'console';
 
 
 const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<any>([])
+  const [formattedRaceTimes, setFormattedRaceTimes] = useState<any>([])
   const [time, setTime] = useState<string>('')
-  const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0);
-  const [averageTimeInHours, setAverageTimeInHours] = useState<number>(0)
+  const [timeInHours, setTimeInHours] = useState<number>(0)
+  const [timeInMinutes, setTimeInMinutes] = useState<number>(0)
+  const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
+  const [averageTimeInHours, setAverageTimeInHours] = useState<number>(averageTimeInMinutes / 60)
 
+  useEffect(() => {
+    // calculateAverageAndUpdateState()
+    setFormattedRaceTimes([...raceTimes])
+    setRaceTimes(formattedRaceTimes)
+  }, [averageTimeInMinutes])
+
+  const calculateAverageAndUpdateState = () => {
+    setAverageTimeInMinutes(calculateAverageTime(raceTimes))
+    // const timeInHours = parseInt((averageTimeInMinutes / 60).toFixed(2))
+    // setAverageTimeInHours(timeInHours)
+  }
+  
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
     event.preventDefault()
+    setFormattedRaceTimes([...raceTimes, time])
     const timeToBeAdded = time
-    // checkForFormatIssues(timeToBeAdded)
     setRaceTimes([...raceTimes, timeToBeAdded])
-    setAverageTimeInMinutes(calculateAverageTime(raceTimes));
-    setAverageTimeInHours(Math.round(averageTimeInMinutes / 60));
+    // setTimeInHours(calculateRaceTime(timeToBeAdded))
+    setTimeInMinutes(calculateRaceTime(timeToBeAdded))
+    // console.log('test', calculateRaceTime(timeToBeAdded))
+    calculateAverageAndUpdateState()
   } 
 
   const handleClear = (event:React.ChangeEvent<any>): void  => {
@@ -24,10 +42,13 @@ const TimeSubmit:FunctionComponent = () => {
     setRaceTimes([])
     setAverageTimeInMinutes(0)
     setAverageTimeInHours(0)
+    setTimeInHours(0)
+    setTimeInMinutes(0)
+    setTime('')
   }  
 
   const handleInputChange = (event:React.ChangeEvent<any>): void  => {
-    setTime(event.target.value);
+    setTime(event.target.value)
   }
 
   // Having trouble with the Regex format for the date
@@ -36,13 +57,9 @@ const TimeSubmit:FunctionComponent = () => {
   //   const regex =/^[0-1]{1}[0-9]{2}:[0-9]{2}\s[A-Z]{2},\s[A-Z]{3}\s[0-9]{1}/
   // }
 
-  const calculateDifferenceFromAverage = () => {
-
-  }
-
 
   return (
-    <>
+    <div>
       <section className="h-96 w-100 bg-[#F6F7F7]">
         <div className="h-full w-100 ml-8 mr-8 border-b-2 border-[#E5E7E8]">
           <p className="pt-8 font-proximaNovaRegular text-xl text-[#888A8C]">Race Time</p>
@@ -52,6 +69,7 @@ const TimeSubmit:FunctionComponent = () => {
               onChange={handleInputChange}
               type="text"
               name="time"
+              value={time}
               placeholder="ex: 08:01 PM, DAY 3">
             </input>
             <button 
@@ -66,13 +84,20 @@ const TimeSubmit:FunctionComponent = () => {
             </button>
           </form>
             <p className="pt-8 mt-4 font-proximaNovaRegular text-xl text-[#888A8C]">Average Time</p>
-          <section className="bg-[#FFFFFF] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
-            <p className="text-center text-lg text-[#00000">{averageTimeInMinutes} minutes <br/> {averageTimeInHours} hours</p>
+          <section className="bg-[#F6F7F7] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
+            <p className="text-center text-lg text-[#00000]">
+              {raceTimes.length === 1 ? timeInMinutes + " minutes" : Math.round(averageTimeInMinutes) + " minutes"} <br/>
+              {/* {averageTimeInMinutes === 0 ? timeInHours + " hours" : averageTimeInHours + " hours"} */}
+            </p>
           </section>
         </div>
       </section>
-      <Results raceTimes={raceTimes}/>
-    </>
+      <Results 
+        raceTimes={raceTimes}
+        averageTimeInHours={averageTimeInHours}
+        timeInHours={timeInHours}
+      />
+    </div>
   )
 }
 

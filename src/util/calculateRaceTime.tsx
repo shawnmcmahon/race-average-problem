@@ -1,16 +1,10 @@
-const calculateAverageTime = (times:Array<any>) => {
+const calculateRaceTime = (time:any) => {
   let totalHours:number = 0; 
-  let averageTime:number = 0;
-  let averageTimeInMinutes:number = 0;
+  let totalMinutes:number =0;
+  let times = [time];
 
 
-  // The basic premise of my solution is to convert the time into military time,
-  // to check for edge cases with 1 and 2 day race times, and calculate the average.    
-
-  // for loop through the times array 
   for (let i = 0; i < times.length; i++) {
-  
-    
     // Split the time array by spaces to create a specific time arrays
       times[i] = times[i].split(' ')
     // Create a sub array in index 0 for the clock time format
@@ -55,22 +49,15 @@ const calculateAverageTime = (times:Array<any>) => {
   
   // Add that amount of hours to a variable called total hours 
   totalHours += times[i][0][0];
-  totalHours += times[i][0][1]
+  totalHours += times[i][0][1];
   
-  // Calculate the average time
-  averageTime = totalHours / times.length
-
-  // Convert to minutes and round
-  averageTimeInMinutes = Math.round(averageTime * 60)
-
-
-  console.log(averageTime)
-
   }
 
-  console.log('average has run')
-  return averageTimeInMinutes;
-  
+  totalMinutes = Math.round(totalHours * 60);
+
+  console.log('raceTime has run', totalHours)
+  return totalMinutes;
+
 }
 
-export default calculateAverageTime;
+export default calculateRaceTime
