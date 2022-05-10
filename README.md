@@ -64,7 +64,11 @@ These features were not required by the spec given but were implemented to impro
 7. Clear button implemented to clear results without having to refresh. 
 8. Each race time shows its end time as well as how many minutes its it took to complete the race.
 9. Type checking provided by Typescript.  
-10. Functional components and React hooks used to ensure speed and reduced loading times.  
+10. Functional components and React hooks used to ensure speed and reduced loading times.
+
+### Future Features 
+
+1. Implement a strong error handling to the input with RegEx to confirm format is typed exactly as intended. 
 
 # Contributors
 
