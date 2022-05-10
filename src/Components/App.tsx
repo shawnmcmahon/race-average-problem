@@ -5,10 +5,10 @@ import TimeSubmit from './TimeSubmit';
 
 const App:FunctionComponent = () => {
   return (
-    <div className="w-100 h-screen bg-[#F6F7F7]">
+    <main className="w-100 h-screen bg-[#F6F7F7]">
       <Header />
       <TimeSubmit />
-    </div>
+    </main>
   );
 }
 

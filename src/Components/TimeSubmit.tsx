@@ -3,7 +3,6 @@ import Results from './Results';
 import calculateTime from '../util/calculateTime';
 import calculateAverage from '../util/calculateAverage';
 
-
 const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<Array<string>>([])
   const [time, setTime] = useState<string>('')
@@ -12,9 +11,7 @@ const TimeSubmit:FunctionComponent = () => {
   const [warning, setWarning] = useState<string>('')
 
   useEffect(() => {
-    if (raceTimes.length > 1) {
       setAverageTimeInMinutes(calculateAverage(timesInMinutes))
-    }
 
   }, [timesInMinutes])
 
@@ -22,12 +19,10 @@ const TimeSubmit:FunctionComponent = () => {
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
     event.preventDefault()
     setWarning('')
-    setRaceTimes([...raceTimes, time])
     if (!time.includes(',') || !time.includes(':') || !time.includes('DAY')) {
       setWarning('Please confirm time format matches placeholder text')
-      setRaceTimes([])
-      setTimesInMinutes([])
     } else {
+      setRaceTimes([...raceTimes, time])
       let input = time.split(',')
       let hours:number = parseInt(input[0].split(':')[0])
       let minutes:number  = parseInt(input[0].split(':')[1].split(' ')[0]) 

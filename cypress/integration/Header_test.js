@@ -10,10 +10,10 @@ describe('Header component', () => {
       .should('have.css', 'background-color')
   })
   
-  
   it('Contains a logo image in the header', () =>{
     cy.get('[data-cy=logo]')
       .should('have.attr', 'src')
   })
+
 })
 
