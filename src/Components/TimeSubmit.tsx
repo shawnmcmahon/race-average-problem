@@ -7,31 +7,34 @@ import { timeEnd } from 'console';
 
 const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<any>([])
+  const [time, setTime] = useState<string>('')
 
 
 
   const [formattedRaceTimes, setFormattedRaceTimes] = useState<any>([])
-  const [time, setTime] = useState<string>('')
   const [timeInHours, setTimeInHours] = useState<number>(0)
   const [timeInMinutes, setTimeInMinutes] = useState<number>(0)
   const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
   const [averageTimeInHours, setAverageTimeInHours] = useState<number>(averageTimeInMinutes / 60)
 
 
-  const calculateAverageAndUpdateState = () => {
-    setAverageTimeInMinutes(calculateAverageTime(raceTimes))
-    // const timeInHours = parseInt((averageTimeInMinutes / 60).toFixed(2))
-    // setAverageTimeInHours(timeInHours)
-  }
+
   
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
     event.preventDefault()
-    setFormattedRaceTimes([...raceTimes, time])
-    const timeToBeAdded = time
-    setRaceTimes([...raceTimes, timeToBeAdded])
-    // setTimeInHours(calculateRaceTime(timeToBeAdded))
-    setTimeInMinutes(calculateRaceTime(timeToBeAdded))
-    calculateAverageAndUpdateState()
+    let input = time.split(',')
+    let hours = parseInt(input[0].split(':')[0])
+    let minutes = parseInt(input[0].split(':')[1].split(' ')[0]) 
+    let period = input[0].split(':')[1].split(' ')[1]
+    let days = parseInt(input[1].split(' DAY ')[1])
+
+
+    console.log(input)
+    console.log('hours', hours)
+    console.log('minutes', minutes)
+    console.log('period', period)
+    console.log('days', days)
+
   } 
 
   const handleClear = (event:React.ChangeEvent<any>): void  => {

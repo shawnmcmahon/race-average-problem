@@ -1,4 +1,6 @@
-const calculateTime = (hours: number, minutes: number, period: string, days: number) => {
+import { AnyAaaaRecord } from "dns";
+
+const calculateTime = (hours: any, minutes: any, period: string, days: number) => {
   let totalTime = 0;
 
   // Count the amount of hours
