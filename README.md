@@ -1,3 +1,7 @@
 # Bitly Race-Time Challenge 
 
-### Overview
+[![<shawnmcmahon>](https://circleci.com/<gh>/shawnmcmahon/<race-average-problem>.svg?style=svg)](<LINK>)
+
+### Overview 
+
+- 
