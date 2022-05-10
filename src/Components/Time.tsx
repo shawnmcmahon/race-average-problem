@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react'
-import runner from '../assets/images/run.svg'
 import sailBoat from '../assets/images/sailBoat.svg'
 
 interface TimePropTypes {
