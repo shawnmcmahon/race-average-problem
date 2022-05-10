@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import bityLogo from '../assets/images/logo.svg';
+import bityLogo from '../assets/images/logo.svg'
 
 
 const Header:FunctionComponent = () => {
@@ -10,4 +10,4 @@ const Header:FunctionComponent = () => {
   )
 }
 
-export default Header;
+export default Header

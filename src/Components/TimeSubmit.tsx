@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState, useEffect } from 'react'
-import Results from './Results';
-import calculateTime from '../util/calculateTime';
-import calculateAverage from '../util/calculateAverage';
+import Results from './Results'
+import calculateTime from '../util/calculateTime'
+import calculateAverage from '../util/calculateAverage'
 
 const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<Array<string>>([])
