@@ -1,8 +1,5 @@
 import React, { FunctionComponent, useState, useEffect } from 'react'
 import Results from './Results';
-import calculateAverageTime from '../util/calculateAverageTime';
-import calculateRaceTime from '../util/calculateRaceTime';
-import { timeEnd } from 'console';
 import calculateTime from '../util/calculateTime';
 
 
