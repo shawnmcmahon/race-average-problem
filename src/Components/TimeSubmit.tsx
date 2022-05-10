@@ -13,7 +13,7 @@ const TimeSubmit:FunctionComponent = () => {
   useEffect(() => {
       setAverageTimeInMinutes(calculateAverage(timesInMinutes))
 
-  }, [timesInMinutes, averageTimeInMinutes])
+  }, [timesInMinutes])
 
   
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
@@ -21,7 +21,6 @@ const TimeSubmit:FunctionComponent = () => {
     setWarning('')
     if (!time.includes(',') || !time.includes(':') || !time.includes('DAY')) {
       setWarning('Please confirm time format matches placeholder text')
-      setTimesInMinutes([])
     } else {
       setRaceTimes([...raceTimes, time])
       let input = time.split(',')
