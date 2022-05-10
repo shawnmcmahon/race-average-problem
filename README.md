@@ -42,9 +42,27 @@ For your convenience, this project has been hosted on Netlify to view without a 
 
 ### Technologies Used 
 
-|Framework|Language|Design|CI
-|--- |--- |--- |
-|![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)|![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)|![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)|![CircleCI](https://img.shields.io/badge/circle%20ci-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white)
+<img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react" />
+<img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="typescript"/>
+<img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="tailwind css"/>
+<img src="https://img.shields.io/badge/circle%20ci-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white" alt="circle ci" />
+
+
+<table>
+    <tr>
+          <td> Bobby V <a href="https://github.com/hoomberto">GH</td>
+    </tr>
+    </tr>
+ <td><img src="https://avatars.githubusercontent.com/u/78388491?v=4" alt="Bobby GH img"
+width="150" height="auto" /></td>
+     <tr>
+          <td> Shawn McMahon <a href="https://github.com/shawnmcmahon">GH</td>
+      </tr>
+      </tr>
+<td><img src="https://avatars.githubusercontent.com/u/73731359?v=4" alt="Shawn GH img"
+width="150" height="auto" /></td>
+    </tr>
+</table>
 
 
 
