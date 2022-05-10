@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import runner from '../assets/images/run.svg'
+import sailBoat from '../assets/images/sailBoat.svg'
 
 interface TimePropTypes {
   raceTime: string, 
@@ -24,7 +25,7 @@ const Time:FunctionComponent<TimePropTypes> = ({raceTime, index, timesInMinutes}
           <p className="text-right text-lg pr-2 text-[#000000]" data-cy="runner-number">
             {(index + 1)}
           </p>
-          <img className="h-6" src={runner} data-cy="runner-icon" alt="Runner icon" />
+          <img className="h-6" src={sailBoat} data-cy="runner-icon" alt="Runner icon" />
         </div>
       </section>
     </article>
