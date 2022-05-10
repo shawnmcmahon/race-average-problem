@@ -21,6 +21,7 @@ const TimeSubmit:FunctionComponent = () => {
   
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
     event.preventDefault()
+    setWarning('')
     setRaceTimes([...raceTimes, time])
     if (!time.includes(',') || !time.includes(':') || !time.includes('DAY')) {
       setWarning('Please confirm time format matches placeholder text')
@@ -36,6 +37,7 @@ const TimeSubmit:FunctionComponent = () => {
       setTimesInMinutes([...timesInMinutes, convertedTime])
       setAverageTimeInMinutes(calculateAverage(timesInMinutes))
     }
+    setTime('')
 
   } 
 
@@ -56,7 +58,7 @@ const TimeSubmit:FunctionComponent = () => {
     <div>
       <section className="h-96 w-100 bg-[#F6F7F7]">
         <div className="h-full w-100 ml-8 mr-8 border-b-2 border-[#E5E7E8]">
-          <p className="pt-8 font-proximaNovaRegular text-xl text-[#888A8C]">Race Time</p>
+          <p className="pt-8 font-proximaNovaRegular text-xl text-[#888A8C]" data-cy="input-label">Race Time</p>
           <form>
             <input 
               className="h-12 w-2/6 max-w-lg mt-2 pl-4 border-[#E5E7E8] border-2 rounded-sm font-proximaNovaRegular focus:outline-none"
@@ -64,19 +66,22 @@ const TimeSubmit:FunctionComponent = () => {
               type="text"
               name="time"
               value={time}
-              placeholder="ex: 08:01 PM, DAY 3">
+              placeholder="ex: 08:01 PM, DAY 3"
+              data-cy="input">
             </input>
             <button 
               className="h-14 w-36 sm-12 ml-6 bg-[#2A5BD7] rounded-md font-proximaNovaRegular text-[#FFFFFF] text-xl"
-              onClick={(event) => handleSubmit(event)}>
+              onClick={(event) => handleSubmit(event)}
+              data-cy="submit-button">
               Submit
             </button>
             <button 
               className="h-14 w-36 sm-12 ml-6 bg-[#EB5821] rounded-md font-proximaNovaRegular text-[#FFFFFF] text-xl"
-              onClick={(event) => handleClear(event)}>  
+              onClick={(event) => handleClear(event)}
+              data-cy="clear-button">  
               Clear
             </button>
-            <p className="pt-8 font-proximaNovaRegular text-md text-[#EB5821]">{warning}</p>
+            <p className="pt-8 font-proximaNovaRegular text-md text-[#EB5821]" data-cy="warning">{warning}</p>
           </form>
         </div>
       </section>

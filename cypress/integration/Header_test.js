@@ -14,7 +14,6 @@ describe('Header component', () => {
   it('Contains a logo image in the header', () =>{
     cy.get('[data-cy=logo]')
       .should('have.attr', 'src')
-      .should('include', 'bityLogo' )
   })
 })
 
