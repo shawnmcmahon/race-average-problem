@@ -1,4 +1,4 @@
-import {FunctionComponent} from 'react'
+import { FunctionComponent } from 'react'
 import Time from './Time'
 
 interface resultsPropTypes {

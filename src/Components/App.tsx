@@ -1,6 +1,5 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import Header from './Header';
-import Results from './Results';
 import TimeSubmit from './TimeSubmit';
 
 const App:FunctionComponent = () => {

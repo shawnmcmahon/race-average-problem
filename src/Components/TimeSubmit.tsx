@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from 'react'
+import { FunctionComponent, useState, useEffect, ChangeEvent } from 'react'
 import Results from './Results'
 import calculateTime from '../util/calculateTime'
 import calculateAverage from '../util/calculateAverage'
@@ -16,7 +16,7 @@ const TimeSubmit:FunctionComponent = () => {
   }, [timesInMinutes])
 
   
-  const handleSubmit = (event: React.ChangeEvent<any>): void => {
+  const handleSubmit = (event:ChangeEvent<any>): void => {
     event.preventDefault()
     setWarning('')
     if (!time.includes(',') || !time.includes(':') || !time.includes('DAY')) {
@@ -36,7 +36,7 @@ const TimeSubmit:FunctionComponent = () => {
 
   } 
 
-  const handleClear = (event:React.ChangeEvent<any>): void  => {
+  const handleClear = (event:ChangeEvent<any>): void  => {
     event.preventDefault()
     setRaceTimes([])
     setTime('')
@@ -45,7 +45,7 @@ const TimeSubmit:FunctionComponent = () => {
     setWarning('')
   }  
 
-  const handleInputChange = (event:React.ChangeEvent<any>): void  => {
+  const handleInputChange = (event:ChangeEvent<any>): void  => {
     setTime(event.target.value)
   }
 

@@ -1,5 +1,5 @@
 const calculateTime = (hours: any, minutes: any, period: string, days: number) => {
-  let totalTime = 0;
+  let totalTime = 0
 
   // Count the amount of hours
   if (hours === 12 && period === 'PM' && days === 1 ) {
@@ -26,7 +26,6 @@ const calculateTime = (hours: any, minutes: any, period: string, days: number) =
     totalTime += ((days - 2) * 24)
   }
 
-  
   // Convert to minutes
   totalTime *= 60 
   // Add minutes from original time

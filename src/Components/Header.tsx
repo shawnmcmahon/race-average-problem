@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import bityLogo from '../assets/images/logo.svg'
 
 
