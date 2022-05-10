@@ -1,10 +1,10 @@
 # Bitly Race Average Problem
 
-Circle Continous Integration Status: [![<shawnmcmahon>](https://circleci.com/gh/shawnmcmahon/race-average-problem.svg?style=svg)](<https://app.circleci.com/pipelines/github/shawnmcmahon/race-average-problem>)
+CircleCI Continous Integration Status: [![<shawnmcmahon>](https://circleci.com/gh/shawnmcmahon/race-average-problem.svg?style=svg)](<https://app.circleci.com/pipelines/github/shawnmcmahon/race-average-problem>)
 
 ### Overview 
 
-The sailboat race is heating up! The competition is fierce this year and many contestants are expcted to compete. We need a way to find the average minutes it takes to complete the race between all the contestants. This application was created to solve this problem.  
+The sailboat race is heating up! The competition is fierce this year and many contestants are expected to compete. We need a way to calculate the average minutes it takes to complete the race between all the contestants. This application was created to solve this problem.  
 
 ### Format
 
@@ -16,7 +16,7 @@ Example: `12:01 AM, DAY 2` / `7:01 PM, DAY 20`
 
 For your convenience, this project has been hosted on Netlify to view without a local setup required. 
 
-[Live Site](https://bit.ly/bitlyChallengeLive)
+[Netlify-Hosted Live Site](https://bit.ly/bitlyChallengeLive)
 
 ### Local Setup 
 
@@ -51,6 +51,7 @@ For your convenience, this project has been hosted on Netlify to view without a 
   <img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e" alt="cypress" />
 </p>
 
+# Contributors
 
 <table align="left">
   <td> Shawn McMahon <a href="https://github.com/shawnmcmahon">GH</td>
