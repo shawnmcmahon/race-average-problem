@@ -26,18 +26,18 @@ const Results:FunctionComponent<resultsPropTypes> = ({raceTimes, timesInMinutes,
   return (
     <section className="flex flex-col h-full w-100 bg-[#F6F7F7]">
       <div className="bg-[#F5F6F7] w-100 m-8 flex flex-col"> 
-        <p className="font-proximaNovaBold text-xl">Results</p>
-        <p className="pt-8 pl-8 mt-4 font-proximaNovaRegular text-xl text-[#888A8C]">
+        <p className="font-proximaNovaBold text-xl" data-cy="results-label">Results</p>
+        <p className="pt-8 pl-8 mt-4 font-proximaNovaRegular text-xl text-[#888A8C]"  data-cy="average-label">
           Average Time (minutes)
         </p>
         <section className="bg-[#F6F7F7] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
-          <p className="text-center text-2xl text-[#00000]">
+          <p className="text-center text-2xl text-[#00000]" data-cy="average-value">
             {isNaN(averageTimeInMinutes) ? 0 :
             timesInMinutes.length === 1 ? timesInMinutes[0] : averageTimeInMinutes
             }
           </p>
         </section>
-        <div className="flex flex-row flex-wrap">
+        <div className="flex flex-row flex-wrap" data-cy="results-area">
           {mapRaceTimesToResults(raceTimes)}
         </div>
       </div>

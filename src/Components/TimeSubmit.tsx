@@ -11,11 +11,9 @@ const TimeSubmit:FunctionComponent = () => {
   const [warning, setWarning] = useState<string>('')
 
   useEffect(() => {
-    if (raceTimes.length > 1) {
       setAverageTimeInMinutes(calculateAverage(timesInMinutes))
-    }
 
-  }, [timesInMinutes])
+  }, [timesInMinutes, averageTimeInMinutes])
 
   
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
