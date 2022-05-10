@@ -50,9 +50,9 @@ const TimeSubmit:FunctionComponent = () => {
   const handleClear = (event:React.ChangeEvent<any>): void  => {
     event.preventDefault()
     setRaceTimes([])
-    setAverageTimeInMinutes(0)
-    setTimesInMinutes([])
     setTime('')
+    setTimesInMinutes([])
+    setAverageTimeInMinutes(0)
     setWarning('')
   }  
 
