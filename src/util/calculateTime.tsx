@@ -31,11 +31,8 @@ const calculateTime = (hours: any, minutes: any, period: string, days: number) =
   totalTime *= 60 
   // Add minutes from original time
   totalTime += minutes 
-  console.log('total time', totalTime)
   // Account for the start of the race at 8am by subtracting 8 hours
   totalTime -= 480
-
-  console.log(totalTime)
   
   return totalTime
   
