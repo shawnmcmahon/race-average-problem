@@ -1,13 +1,13 @@
 import {FunctionComponent} from 'react'
 import Time from './Time'
 
-interface raceTimeProps {
+interface resultsPropTypes {
   raceTimes: Array<string>,
   timesInMinutes: Array<number>,
   averageTimeInMinutes: number
 }
 
-const Results:FunctionComponent<raceTimeProps> = ({raceTimes, timesInMinutes, averageTimeInMinutes}) => {
+const Results:FunctionComponent<resultsPropTypes> = ({raceTimes, timesInMinutes, averageTimeInMinutes}) => {
   const mapRaceTimesToResults = (raceTimes: Array<string>) => {
     const mappedTimes = raceTimes.map((raceTime: string, index: number) => {
       return (
@@ -32,7 +32,7 @@ const Results:FunctionComponent<raceTimeProps> = ({raceTimes, timesInMinutes, av
         </p>
         <section className="bg-[#F6F7F7] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
           <p className="text-center text-2xl text-[#00000]">
-            {timesInMinutes.length === 1 ? timesInMinutes[0] : averageTimeInMinutes}
+            {(timesInMinutes.length === 1 ? timesInMinutes[0] : averageTimeInMinutes)}
           </p>
         </section>
         <div className="flex flex-row flex-wrap">

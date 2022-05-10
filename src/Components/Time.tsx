@@ -1,13 +1,13 @@
 import { FunctionComponent } from 'react'
 import runner from '../assets/images/run.svg';
 
-interface timeProps {
+interface timePropTypes {
   raceTime: string, 
   index: number
   timesInMinutes: Array<number>
 }
 
-const Time:FunctionComponent<timeProps> = ({raceTime, index, timesInMinutes}) => {
+const Time:FunctionComponent<timePropTypes> = ({raceTime, index, timesInMinutes}) => {
   return (
     <article 
       className="bg-[#FFFFFF] h-16 w-64 m-4 flex flex-col justify-center rounded-sm font-proximaNovaRegular"
