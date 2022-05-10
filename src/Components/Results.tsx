@@ -1,13 +1,13 @@
 import {FunctionComponent} from 'react'
 import Time from './Time'
 
-interface raceTimeProps {
+interface resultsPropTypes {
   raceTimes: Array<string>,
   timesInMinutes: Array<number>,
   averageTimeInMinutes: number
 }
 
-const Results:FunctionComponent<raceTimeProps> = ({raceTimes, timesInMinutes, averageTimeInMinutes}) => {
+const Results:FunctionComponent<resultsPropTypes> = ({raceTimes, timesInMinutes, averageTimeInMinutes}) => {
   const mapRaceTimesToResults = (raceTimes: Array<string>) => {
     const mappedTimes = raceTimes.map((raceTime: string, index: number) => {
       return (
