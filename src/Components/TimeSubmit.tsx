@@ -3,39 +3,56 @@ import Results from './Results';
 import calculateAverageTime from '../util/calculateAverageTime';
 import calculateRaceTime from '../util/calculateRaceTime';
 import { timeEnd } from 'console';
+import calculateTime from '../util/calculateTime';
 
 
 const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<any>([])
   const [time, setTime] = useState<string>('')
+  const [timesInMinutes, setTimesInMinutes] = useState<Array<any>>([])
+  const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<any>(0)
 
 
 
   const [formattedRaceTimes, setFormattedRaceTimes] = useState<any>([])
   const [timeInHours, setTimeInHours] = useState<number>(0)
-  const [timeInMinutes, setTimeInMinutes] = useState<number>(0)
-  const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
+  // const [timeInMinutes, setTimeInMinutes] = useState<number>(0)
+  // const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
   const [averageTimeInHours, setAverageTimeInHours] = useState<number>(averageTimeInMinutes / 60)
 
+  useEffect(() => {
+    setAverageTimeInMinutes(calculateAverage(timesInMinutes))
 
+
+  }, [timesInMinutes])
 
   
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
     event.preventDefault()
+    setRaceTimes([...raceTimes, time])
     let input = time.split(',')
     let hours = parseInt(input[0].split(':')[0])
     let minutes = parseInt(input[0].split(':')[1].split(' ')[0]) 
     let period = input[0].split(':')[1].split(' ')[1]
     let days = parseInt(input[1].split(' DAY ')[1])
+    const convertedTime = calculateTime(hours, minutes, period, days)
+    setTimesInMinutes([...timesInMinutes, convertedTime])
+    setAverageTimeInMinutes(calculateAverage(timesInMinutes))
 
 
-    console.log(input)
-    console.log('hours', hours)
-    console.log('minutes', minutes)
-    console.log('period', period)
-    console.log('days', days)
 
   } 
+
+  const calculateAverage = (times: Array<number>) => {
+    let averageTime = 0;
+    for (let i = 0; i < times.length; i++) {
+      averageTime += times[i]
+    }
+    averageTime = averageTime / times.length
+
+    console.log('averageTime', averageTime)
+    return averageTime
+  }
 
   const handleClear = (event:React.ChangeEvent<any>): void  => {
     event.preventDefault()
@@ -43,7 +60,7 @@ const TimeSubmit:FunctionComponent = () => {
     setAverageTimeInMinutes(0)
     setAverageTimeInHours(0)
     setTimeInHours(0)
-    setTimeInMinutes(0)
+    setTimesInMinutes([])
     setTime('')
   }  
 
@@ -86,7 +103,7 @@ const TimeSubmit:FunctionComponent = () => {
             <p className="pt-8 mt-4 font-proximaNovaRegular text-xl text-[#888A8C]">Average Time</p>
           <section className="bg-[#F6F7F7] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
             <p className="text-center text-lg text-[#00000]">
-              {raceTimes.length === 1 ? timeInMinutes + " minutes" : Math.round(averageTimeInMinutes) + " minutes"} <br/>
+              {/* {raceTimes.length === 1 ? timeInMinutes + " minutes" : Math.round(averageTimeInMinutes) + " minutes"} <br/> */}
               {/* {averageTimeInMinutes === 0 ? timeInHours + " hours" : averageTimeInHours + " hours"} */}
             </p>
           </section>
