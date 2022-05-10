@@ -51,12 +51,27 @@ For your convenience, this project has been hosted on Netlify to view without a 
   <img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e" alt="cypress" />
 </p>
 
+### Addtional Features 
+
+These features were not required by the spec given but were implemented to improve the quality of the application. 
+
+1. End-2-End testing implemented to ensure components mount and are displayed as intended. 
+2. Unit testing provided with Jest to ensure calculate logic functions as necesary.
+3. Continous integration implemented with CircleCI to ensure all tests pass between commit changes. 
+4. Hosted live on Netlify for easy viewing between multiple team members. 
+5. Error handling for race times with incorrect formats. Does not allow you to submit a time without a semicolo, a comma, or the word 'DAY'. 
+6. Warning message appears letting the user know the format was incorrect. 
+7. Clear button implemented to clear results without having to refresh. 
+8. Each race time shows its end time as well as how many minutes its it took to complete the race.
+9. Type checking provided by Typescript.  
+10. Functional components and React hooks used to ensure speed and reduced loading times.  
+
 # Contributors
 
 <table align="left">
-  <td> Shawn McMahon <a href="https://github.com/shawnmcmahon">GH</td>
-      </tr>
-      </tr>
+  <td> Shawn McMahon <a href="https://www.linkedin.com/in/shawnpmcmahon/">LI</td>
+    </tr>
+    </tr>
 <td><img src="https://avatars.githubusercontent.com/u/73731359?v=4" alt="Shawn GH img"
 width="150" height="auto" /></td>
     </tr>
