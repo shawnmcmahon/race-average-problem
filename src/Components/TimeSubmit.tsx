@@ -7,6 +7,9 @@ import { timeEnd } from 'console';
 
 const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<any>([])
+
+
+
   const [formattedRaceTimes, setFormattedRaceTimes] = useState<any>([])
   const [time, setTime] = useState<string>('')
   const [timeInHours, setTimeInHours] = useState<number>(0)
@@ -14,11 +17,6 @@ const TimeSubmit:FunctionComponent = () => {
   const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
   const [averageTimeInHours, setAverageTimeInHours] = useState<number>(averageTimeInMinutes / 60)
 
-  useEffect(() => {
-    // calculateAverageAndUpdateState()
-    setFormattedRaceTimes([...raceTimes])
-    setRaceTimes(formattedRaceTimes)
-  }, [averageTimeInMinutes])
 
   const calculateAverageAndUpdateState = () => {
     setAverageTimeInMinutes(calculateAverageTime(raceTimes))
@@ -33,7 +31,6 @@ const TimeSubmit:FunctionComponent = () => {
     setRaceTimes([...raceTimes, timeToBeAdded])
     // setTimeInHours(calculateRaceTime(timeToBeAdded))
     setTimeInMinutes(calculateRaceTime(timeToBeAdded))
-    // console.log('test', calculateRaceTime(timeToBeAdded))
     calculateAverageAndUpdateState()
   } 
 
