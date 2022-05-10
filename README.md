@@ -50,15 +50,8 @@ For your convenience, this project has been hosted on Netlify to view without a 
 </p>
 
 
-<table>
-    <tr>
-          <td> Bobby V <a href="https://github.com/hoomberto">GH</td>
-    </tr>
-    </tr>
- <td><img src="https://avatars.githubusercontent.com/u/78388491?v=4" alt="Bobby GH img"
-width="150" height="auto" /></td>
-     <tr>
-          <td> Shawn McMahon <a href="https://github.com/shawnmcmahon">GH</td>
+<table align="left">
+  <td> Shawn McMahon <a href="https://github.com/shawnmcmahon">GH</td>
       </tr>
       </tr>
 <td><img src="https://avatars.githubusercontent.com/u/73731359?v=4" alt="Shawn GH img"
