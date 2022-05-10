@@ -10,19 +10,14 @@ const TimeSubmit:FunctionComponent = () => {
   const [raceTimes, setRaceTimes] = useState<any>([])
   const [time, setTime] = useState<string>('')
   const [timesInMinutes, setTimesInMinutes] = useState<Array<any>>([])
-  const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<any>(0)
+  const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
+  const [warning, setWarning] = useState<string>('')
 
-
-
-  const [formattedRaceTimes, setFormattedRaceTimes] = useState<any>([])
-  const [timeInHours, setTimeInHours] = useState<number>(0)
-  // const [timeInMinutes, setTimeInMinutes] = useState<number>(0)
-  // const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
-  const [averageTimeInHours, setAverageTimeInHours] = useState<number>(averageTimeInMinutes / 60)
 
   useEffect(() => {
-    setAverageTimeInMinutes(calculateAverage(timesInMinutes))
-
+    if (raceTimes.length > 1) {
+      setAverageTimeInMinutes(calculateAverage(timesInMinutes))
+    }
 
   }, [timesInMinutes])
 
@@ -30,16 +25,19 @@ const TimeSubmit:FunctionComponent = () => {
   const handleSubmit = (event: React.ChangeEvent<any>): void => {
     event.preventDefault()
     setRaceTimes([...raceTimes, time])
-    let input = time.split(',')
-    let hours = parseInt(input[0].split(':')[0])
-    let minutes = parseInt(input[0].split(':')[1].split(' ')[0]) 
-    let period = input[0].split(':')[1].split(' ')[1]
-    let days = parseInt(input[1].split(' DAY ')[1])
-    const convertedTime = calculateTime(hours, minutes, period, days)
-    setTimesInMinutes([...timesInMinutes, convertedTime])
-    setAverageTimeInMinutes(calculateAverage(timesInMinutes))
+    if (!time.includes(',') || !time.includes(':') || !time.includes('DAY')) {
+      setWarning('Please make sure format matches placeholder text')
+    } else {
+      let input = time.split(',')
+      let hours = parseInt(input[0].split(':')[0])
+      let minutes = parseInt(input[0].split(':')[1].split(' ')[0]) 
+      let period = input[0].split(':')[1].split(' ')[1]
+      let days = parseInt(input[1].split(' DAY ')[1])
+      const convertedTime = calculateTime(hours, minutes, period, days)
+      setTimesInMinutes([...timesInMinutes, convertedTime])
+      setAverageTimeInMinutes(calculateAverage(timesInMinutes))
 
-
+    }
 
   } 
 
@@ -50,7 +48,6 @@ const TimeSubmit:FunctionComponent = () => {
     }
     averageTime = averageTime / times.length
 
-    console.log('averageTime', averageTime)
     return averageTime
   }
 
@@ -58,21 +55,15 @@ const TimeSubmit:FunctionComponent = () => {
     event.preventDefault()
     setRaceTimes([])
     setAverageTimeInMinutes(0)
-    setAverageTimeInHours(0)
-    setTimeInHours(0)
     setTimesInMinutes([])
     setTime('')
+    setWarning('')
   }  
 
   const handleInputChange = (event:React.ChangeEvent<any>): void  => {
     setTime(event.target.value)
   }
 
-  // Having trouble with the Regex format for the date
-
-  // const checkForFormatIssues = (input: any) => {
-  //   const regex =/^[0-1]{1}[0-9]{2}:[0-9]{2}\s[A-Z]{2},\s[A-Z]{3}\s[0-9]{1}/
-  // }
 
 
   return (
@@ -99,20 +90,14 @@ const TimeSubmit:FunctionComponent = () => {
               onClick={(event) => handleClear(event)}>  
               Clear
             </button>
+            <p className="pt-8 font-proximaNovaRegular text-md text-[#EB5821]">{warning}</p>
           </form>
-            <p className="pt-8 mt-4 font-proximaNovaRegular text-xl text-[#888A8C]">Average Time</p>
-          <section className="bg-[#F6F7F7] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
-            <p className="text-center text-lg text-[#00000]">
-              {/* {raceTimes.length === 1 ? timeInMinutes + " minutes" : Math.round(averageTimeInMinutes) + " minutes"} <br/> */}
-              {/* {averageTimeInMinutes === 0 ? timeInHours + " hours" : averageTimeInHours + " hours"} */}
-            </p>
-          </section>
         </div>
       </section>
       <Results 
         raceTimes={raceTimes}
-        averageTimeInHours={averageTimeInHours}
-        timeInHours={timeInHours}
+        timesInMinutes={timesInMinutes}
+        averageTimeInMinutes={averageTimeInMinutes}
       />
     </div>
   )

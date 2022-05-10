@@ -3,14 +3,12 @@ import runner from '../assets/images/run.svg';
 
 interface timeProps {
   raceTime: string, 
-  averageTimeInHours: number,
-  timeInHours: number
   index: number
 }
 
-const Time:FunctionComponent<timeProps> = ({raceTime, averageTimeInHours, timeInHours, index}) => {
+const Time:FunctionComponent<timeProps> = ({raceTime, index}) => {
 
-  const timeDifferenceFromAverage = (timeInHours - averageTimeInHours).toFixed(2);
+  // const timeDifferenceFromAverage = (timeInHours - averageTimeInHours).toFixed(2);
 
   return (
     <article 
