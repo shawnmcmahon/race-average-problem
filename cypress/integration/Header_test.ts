@@ -17,3 +17,5 @@ describe('Header component', () => {
 
 })
 
+export {}
+

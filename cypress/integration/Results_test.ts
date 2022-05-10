@@ -94,3 +94,5 @@ describe('Results component', () => {
   })
   
 })
+
+export default {}
