@@ -93,10 +93,4 @@ describe('Results component', () => {
       .should('have.text', '27239')
   })
   
-  
-  
-
-
-
-
 })

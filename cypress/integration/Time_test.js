@@ -31,13 +31,19 @@ describe('Results component', () => {
     cy.get('[data-cy=submit-button]').click()
     cy.get('article').should(($article) => {
       expect($article).to.have.length(3)
+    })
   })
 
-  
-})
-  
-
-
-
+  it('Should not render any times with incorrect formats', () => {
+    cy.get('[data-cy=input]').type('08:00 PM, DAY 3') 
+    cy.get('[data-cy=submit-button]').click()
+    cy.get('[data-cy=input]').type('0800 PM, DAY 3') 
+    cy.get('[data-cy=submit-button]').click()
+    cy.get('article').should(($article) => {
+      expect($article).to.have.length(1)
+    })
+    cy.get('[data-cy=warning]')
+      .should('have.text', 'Please confirm time format matches placeholder text')
+  })
 
 })

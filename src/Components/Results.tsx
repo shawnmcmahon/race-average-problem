@@ -37,9 +37,9 @@ const Results:FunctionComponent<resultsPropTypes> = ({raceTimes, timesInMinutes,
             }
           </p>
         </section>
-        <div className="flex flex-row flex-wrap" data-cy="results-area">
+        <section className="flex flex-row flex-wrap" data-cy="results-area">
           {mapRaceTimesToResults(raceTimes)}
-        </div>
+        </section>
       </div>
     </section>
   )

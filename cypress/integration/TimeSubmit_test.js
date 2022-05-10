@@ -62,8 +62,6 @@ describe('TimeSubmit Component', () => {
     cy.get('[data-cy=input]').should('have.attr', 'value', '')
   })
   
-  
-
 })
 
 
