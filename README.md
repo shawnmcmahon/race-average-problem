@@ -16,7 +16,7 @@ Example: `12:01 AM, DAY 2` / `7:01 PM, DAY 20`
 
 For your convenience, this project has been hosted on Netlify to view without a local setup required. 
 
-
+[Live Site](https://bit.ly/bitlyChallengeLive)
 
 ### Local Setup 
 
@@ -37,6 +37,14 @@ For your convenience, this project has been hosted on Netlify to view without a 
 ``npm start``
 
 5. A new browser window will open with the project hosted at ``http://localhost:3000/``
+
+### Demo 
+
+### Technologies Used 
+
+|Framework|Language|Design|CI
+|--- |--- |--- |
+|![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)|![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)|![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)|![CircleCI](https://img.shields.io/badge/circle%20ci-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white)
 
 
 
