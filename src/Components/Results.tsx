@@ -16,6 +16,7 @@ const Results:FunctionComponent<raceTimeProps> = ({raceTimes, timesInMinutes, av
             raceTime={raceTime}
             key={index}
             index={index}
+            timesInMinutes={timesInMinutes}
           />
       )
     })

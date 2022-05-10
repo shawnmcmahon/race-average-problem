@@ -4,9 +4,10 @@ import runner from '../assets/images/run.svg';
 interface timeProps {
   raceTime: string, 
   index: number
+  timesInMinutes: Array<number>
 }
 
-const Time:FunctionComponent<timeProps> = ({raceTime, index}) => {
+const Time:FunctionComponent<timeProps> = ({raceTime, index, timesInMinutes}) => {
 
   // const timeDifferenceFromAverage = (timeInHours - averageTimeInHours).toFixed(2);
 
@@ -19,7 +20,7 @@ const Time:FunctionComponent<timeProps> = ({raceTime, index}) => {
       </section>
       <section className="flex h-full">
         <div className="bg-[#FFFFFF] w-2/4 pl-4 pb-2">   
-          {/* <p className="text-left text-sm text-[#EB5821]">{timeDifferenceFromAverage}</p> */}
+          <p className="text-left text-sm text-[#EB5821]">{timesInMinutes[index]}</p>
         </div>
         <div className="flex justify-end bg-[#FFF] w-2/4 pr-2 pb-2">   
           <p className="text-right text-lg pr-2 text-[#000000]">

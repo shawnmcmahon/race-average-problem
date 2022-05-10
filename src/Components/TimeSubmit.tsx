@@ -7,9 +7,9 @@ import calculateTime from '../util/calculateTime';
 
 
 const TimeSubmit:FunctionComponent = () => {
-  const [raceTimes, setRaceTimes] = useState<any>([])
+  const [raceTimes, setRaceTimes] = useState<Array<string>>([])
   const [time, setTime] = useState<string>('')
-  const [timesInMinutes, setTimesInMinutes] = useState<Array<any>>([])
+  const [timesInMinutes, setTimesInMinutes] = useState<Array<number>>([])
   const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
   const [warning, setWarning] = useState<string>('')
 
@@ -36,7 +36,6 @@ const TimeSubmit:FunctionComponent = () => {
       const convertedTime = calculateTime(hours, minutes, period, days)
       setTimesInMinutes([...timesInMinutes, convertedTime])
       setAverageTimeInMinutes(calculateAverage(timesInMinutes))
-
     }
 
   } 
@@ -48,7 +47,7 @@ const TimeSubmit:FunctionComponent = () => {
     }
     averageTime = averageTime / times.length
 
-    return averageTime
+    return Math.round(averageTime)
   }
 
   const handleClear = (event:React.ChangeEvent<any>): void  => {
@@ -63,7 +62,6 @@ const TimeSubmit:FunctionComponent = () => {
   const handleInputChange = (event:React.ChangeEvent<any>): void  => {
     setTime(event.target.value)
   }
-
 
 
   return (
