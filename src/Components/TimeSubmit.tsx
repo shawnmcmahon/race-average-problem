@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useState, useEffect } from 'react'
 import Results from './Results';
 import calculateTime from '../util/calculateTime';
+import calculateAverage from '../util/calculateAverage';
 
 
 const TimeSubmit:FunctionComponent = () => {
@@ -9,7 +10,6 @@ const TimeSubmit:FunctionComponent = () => {
   const [timesInMinutes, setTimesInMinutes] = useState<Array<number>>([])
   const [averageTimeInMinutes, setAverageTimeInMinutes] = useState<number>(0)
   const [warning, setWarning] = useState<string>('')
-
 
   useEffect(() => {
     if (raceTimes.length > 1) {
@@ -23,7 +23,9 @@ const TimeSubmit:FunctionComponent = () => {
     event.preventDefault()
     setRaceTimes([...raceTimes, time])
     if (!time.includes(',') || !time.includes(':') || !time.includes('DAY')) {
-      setWarning('Please make sure format matches placeholder text')
+      setWarning('Please confirm time format matches placeholder text')
+      setRaceTimes([])
+      setTimesInMinutes([])
     } else {
       let input = time.split(',')
       let hours = parseInt(input[0].split(':')[0])
@@ -37,16 +39,6 @@ const TimeSubmit:FunctionComponent = () => {
 
   } 
 
-  const calculateAverage = (times: Array<number>) => {
-    let averageTime = 0;
-    for (let i = 0; i < times.length; i++) {
-      averageTime += times[i]
-    }
-    averageTime = averageTime / times.length
-
-    return Math.round(averageTime)
-  }
-
   const handleClear = (event:React.ChangeEvent<any>): void  => {
     event.preventDefault()
     setRaceTimes([])
@@ -59,7 +51,6 @@ const TimeSubmit:FunctionComponent = () => {
   const handleInputChange = (event:React.ChangeEvent<any>): void  => {
     setTime(event.target.value)
   }
-
 
   return (
     <div>
