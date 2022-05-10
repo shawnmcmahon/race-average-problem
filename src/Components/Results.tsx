@@ -43,4 +43,4 @@ const Results:FunctionComponent<resultsPropTypes> = ({raceTimes, timesInMinutes,
   )
 }
 
-export default Results;
+export default Results

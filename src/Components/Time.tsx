@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import runner from '../assets/images/run.svg';
+import runner from '../assets/images/run.svg'
 
 interface timePropTypes {
   raceTime: string, 
@@ -31,4 +31,4 @@ const Time:FunctionComponent<timePropTypes> = ({raceTime, index, timesInMinutes}
   )
 }
 
-export default Time;
+export default Time
