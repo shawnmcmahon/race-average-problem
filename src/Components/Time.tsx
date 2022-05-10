@@ -1,17 +1,13 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import runner from '../assets/images/run.svg';
 
 interface timeProps {
   raceTime: string, 
-  averageTimeInHours: number,
-  timeInHours: number
   index: number
+  timesInMinutes: Array<number>
 }
 
-const Time:FunctionComponent<timeProps> = ({raceTime, averageTimeInHours, timeInHours, index}) => {
-
-  const timeDifferenceFromAverage = (timeInHours - averageTimeInHours).toFixed(2);
-
+const Time:FunctionComponent<timeProps> = ({raceTime, index, timesInMinutes}) => {
   return (
     <article 
       className="bg-[#FFFFFF] h-16 w-64 m-4 flex flex-col justify-center rounded-sm font-proximaNovaRegular"
@@ -21,7 +17,7 @@ const Time:FunctionComponent<timeProps> = ({raceTime, averageTimeInHours, timeIn
       </section>
       <section className="flex h-full">
         <div className="bg-[#FFFFFF] w-2/4 pl-4 pb-2">   
-          {/* <p className="text-left text-sm text-[#EB5821]">{timeDifferenceFromAverage}</p> */}
+          <p className="text-left text-sm text-[#EB5821]">{timesInMinutes[index]} min</p>
         </div>
         <div className="flex justify-end bg-[#FFF] w-2/4 pr-2 pb-2">   
           <p className="text-right text-lg pr-2 text-[#000000]">
