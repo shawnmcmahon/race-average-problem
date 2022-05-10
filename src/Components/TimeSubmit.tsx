@@ -33,7 +33,7 @@ const TimeSubmit:FunctionComponent = () => {
       let minutes:number  = parseInt(input[0].split(':')[1].split(' ')[0]) 
       let period:string = input[0].split(':')[1].split(' ')[1]
       let days:number = parseInt(input[1].split(' DAY ')[1])
-      const convertedTime = calculateTime(hours, minutes, period, days)
+      const convertedTime:number = calculateTime(hours, minutes, period, days)
       setTimesInMinutes([...timesInMinutes, convertedTime])
       setAverageTimeInMinutes(calculateAverage(timesInMinutes))
     }
