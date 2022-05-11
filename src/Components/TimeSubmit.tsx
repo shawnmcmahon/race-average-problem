@@ -51,12 +51,12 @@ const TimeSubmit:FunctionComponent = () => {
 
   return (
     <div>
-      <section className="h-96 w-100 bg-grayDark">
-        <div className="h-full w-100 ml-8 mr-8 border-b-2 border-grayBorder md:flex md:flex-col">
+      <section className="md:flex md:flex-col md:self-center h-96 w-100 bg-grayDark">
+        <div className="h-full w-100 ml-8 mr-8 border-b-2 border-grayBorder ">
           <p className="pt-8 font-proximaNovaRegular text-xl text-grayDarker" data-cy="input-label">Race Time</p>
-          <form className="">
+          <form className='flex flex-col md:flex-row'>
             <input 
-              className="h-12 w-2/6 max-w-lg mt-2 pl-4 border-grayBorder border-2 rounded-sm font-proximaNovaRegular focus:outline-none"
+              className="h-14 w-3/6 max-w-lg mt-2 pl-4 border-grayBorder border-2 rounded-sm font-proximaNovaRegular focus:outline-none"
               onChange={handleInputChange}
               type="text"
               name="time"
@@ -65,13 +65,13 @@ const TimeSubmit:FunctionComponent = () => {
               data-cy="input">
             </input>
             <button 
-              className="h-14 w-36 sm-12 ml-6 bg-blue rounded-md font-proximaNovaRegular text-white text-xl"
+              className="h-14 w-36 sm-12 ml-6 m-2 bg-blue rounded-md font-proximaNovaRegular text-white text-xl"
               onClick={(event) => handleSubmit(event)}
               data-cy="submit-button">
               Submit
             </button>
             <button 
-              className="h-14 w-36 sm-12 ml-6 bg-orange rounded-md font-proximaNovaRegular text-white text-xl"
+              className="h-14 w-36 sm-12 ml-6 m-2 bg-orange rounded-md font-proximaNovaRegular text-white text-xl"
               onClick={(event) => handleClear(event)}
               data-cy="clear-button">  
               Clear
