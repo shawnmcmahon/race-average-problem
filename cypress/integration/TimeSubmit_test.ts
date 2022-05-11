@@ -1,4 +1,5 @@
 describe('TimeSubmit Component', () => {
+
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
   })
@@ -55,11 +56,11 @@ describe('TimeSubmit Component', () => {
     cy.get('[data-cy=input]').should('have.attr', 'value', '')
   })
 
-  it('Should clear input upon clicking clear button', () => {
+  it('Should clear warning upon clicking clear button', () => {
     cy.get('[data-cy=input]').type('08:00 PM, DAY 3')
     cy.get('[data-cy=input]').should('have.attr', 'value', '08:00 PM, DAY 3')
     cy.get('[data-cy=clear-button]').click()
-    cy.get('[data-cy=input]').should('have.attr', 'value', '')
+    cy.get('[data-cy=warning]').should('have.attr', 'value', '')
   })
   
 })
