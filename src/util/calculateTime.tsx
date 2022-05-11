@@ -1,4 +1,4 @@
-const calculateTime = (hours: any, minutes: any, period: string, days: number):number => {
+const calculateTime = (hours: number, minutes: number, period: string, days: number):number => {
   let totalTime:number = 0
 
   // Count the amount of hours
