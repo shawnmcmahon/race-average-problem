@@ -98,8 +98,9 @@ to ensure components mount and are displayed as intended.
 
 ### Design Inspiration For Time Component 
 
-- Used Bitly's iconic link branding to design the Time Component
+- Used Bitly's iconic link branding to inspire design for the Time Component
 
+![designInspiration](https://user-images.githubusercontent.com/73731359/167746525-bbde1aee-d81b-4b45-8ddf-f72792ad9881.png)
 
 
 ### Future Features 
