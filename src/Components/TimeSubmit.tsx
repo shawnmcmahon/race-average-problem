@@ -75,8 +75,8 @@ const TimeSubmit:FunctionComponent = () => {
               data-cy="clear-button">  
               Clear
             </button>
-            <p className="pt-8 font-proximaNovaRegular text-md text-orange" data-cy="warning">{warning}</p>
           </form>
+          <p className="pt-8 font-proximaNovaRegular text-md text-orange" data-cy="warning">{warning}</p>
         </div>
       </section>
       <Results 
