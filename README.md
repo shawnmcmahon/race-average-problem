@@ -4,7 +4,7 @@ CircleCI Continous Integration Status: [![<shawnmcmahon>](https://circleci.com/g
 
 ### Overview 
 
-The sailboat race is heating up! The competition is fierce this year and many contestants are expected to compete. We need a way to calculate the average minutes it takes to complete the race between all the contestants. This application was created to solve this problem.  
+The sailboat race is heating up! The competition is fierce this year and many contestants are expected to compete. We need a way to calculate the average minutes it takes to complete the race between all the contestants. This application was created to solve this problem. The user inputs the race time and upon submit the race time is calculated in minutes and displayed in the results area. Average time for the race is updated with each submission. 
 
 ### Format
 
