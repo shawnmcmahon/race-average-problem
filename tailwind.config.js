@@ -5,6 +5,7 @@ module.exports = {
       'blueSlate': '#273144',
       'black': '#000000',
       'blue': '#2A5BD7', 
+      'grayDarker': '#888A8C',
       'grayDark': '#F6F7F7',
       'grayLight': '#F5F6F7',
       'orange': '#EB5821',
