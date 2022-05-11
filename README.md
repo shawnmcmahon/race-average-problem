@@ -40,15 +40,15 @@ For your convenience, this project has been hosted on Netlify to view without a 
 
 ``cd race-average-problem``
 
-3. Install the necessary dependencies 
+3. Install the necessary dependencies. 
 
 ``npm install``
 
-4. Run the program
+4. Run the program.
 
 ``npm start``
 
-5. A new browser window will open with the project hosted at ``http://localhost:3000/``
+5. A new browser window will open with the project hosted at ``http://localhost:3000/``.
 
 ### Demo 
 ![demo](https://user-images.githubusercontent.com/73731359/167745002-01589f4c-583b-4e2a-9a48-a65438f2ef23.gif)
@@ -82,19 +82,19 @@ These features were not required by the spec given but were implemented to impro
 
 #### Cypress End-2-End Testing Setup
 
-1. Follow local setup instructions from above 
+1. Follow local setup instructions from above. 
 
-2. Navigate to the root directory of this project on your local machine 
+2. Navigate to the root directory of this project on your local machine. 
 
-3. In the command line, type ``npx cypress open``
+3. In the command line, type ``npx cypress open``.
 
 4. A Cypress window will open displaying the four test files. Click a test file to run the tests. 
 
 #### Jest Unit Testing Setup
 
-1. Follow local setup instructions from above 
+1. Follow local setup instructions from above. 
 
-2. Navigate to the root directory of this project on your local machine 
+2. Navigate to the root directory of this project on your local machine.
 
 3. To test the calculateTime function, in the command line, type ``calculateTime.test.tsx``
 
@@ -104,7 +104,7 @@ These features were not required by the spec given but were implemented to impro
 
 ### Design Inspiration For Time Component 
 
-- Used Bitly's iconic link branding to inspire design for the Time Component
+- Used Bitly's iconic link branding to inspire design for the Time Component.
 
 ![designInspiration](https://user-images.githubusercontent.com/73731359/167746525-bbde1aee-d81b-4b45-8ddf-f72792ad9881.png)
 
