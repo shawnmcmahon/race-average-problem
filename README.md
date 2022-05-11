@@ -16,7 +16,7 @@ Example: `12:01 AM, DAY 2` / `7:01 PM, DAY 20`
 
 For your convenience, this project has been hosted on Netlify to view without a local setup required. 
 
-[Netlify-Hosted Live Site](https://bit.ly/bitlyChallengeLive)
+[Netlify-Hosted Live Site](https://amazing-mochi-62d774.netlify.app)
 
 ### Local Setup 
 
@@ -54,11 +54,12 @@ For your convenience, this project has been hosted on Netlify to view without a 
   <img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e" alt="cypress" />
 </p>
 
-### Addtional Features 
+### Additional Features 
 
 These features were not required by the spec given but were implemented to improve the quality of the application. 
 
-1. End-2-End testing implemented to ensure components mount and are displayed as intended. 
+1. End-2-End testing implemented with Cypress 
+to ensure components mount and are displayed as intended. 
 2. Unit testing provided with Jest to ensure calculate logic functions as necesary.
 3. Continous integration implemented with CircleCI to ensure all tests pass between commit changes. 
 4. Hosted live on Netlify for easy viewing between multiple team members. 
@@ -71,7 +72,7 @@ These features were not required by the spec given but were implemented to impro
 
 ### Future Features 
 
-1. Implement a strong error handling to the input with RegEx to confirm format is typed exactly as intended. 
+1. Implement a stronger error handling to the input with RegEx to confirm format is typed exactly as intended. 
 
 # Contributors
 
