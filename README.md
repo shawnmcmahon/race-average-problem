@@ -29,6 +29,8 @@ For your convenience, this project has been hosted on Netlify to view without a 
   <img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e" alt="cypress" />
   <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7" alt="netlify" />
 </p>
+  
+- This project uses ``react``, ``react-dom``, ``react-scripts`` for dependencies, as well as, ``typescript``, ``tailwind css``, ``jest``, ``ts-jest``, ``babel-jest``, ``cypress`` for dev dependencies. 
 
 ### Local Setup 
 
