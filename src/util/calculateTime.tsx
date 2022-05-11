@@ -10,7 +10,7 @@ const calculateTime = (hours: number, minutes: number, period: string, days: num
     totalTime += (hours + 12)
   }
 
-  // Check for edge cases for races that start outside day 1
+  // Check for edge cases for races that end outside day 1
   if (hours === 12 && period === 'AM' && days > 1) {
     totalTime += 24
   } else if (hours === 12 && period === 'PM' && days > 1) {
