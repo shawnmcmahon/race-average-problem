@@ -10,7 +10,7 @@ The sailboat race is heating up! The competition is fierce this year and many co
 
 Users submit race times using the ``HH:MM (AM/PM), DAY X`` 12 hour clock format.
 
-Example: `12:01 AM, DAY 2` / `7:01 PM, DAY 20`
+Example: `12:01 AM, DAY 2` or `7:01 PM, DAY 20`
 
 ### Easy Viewing 
 
