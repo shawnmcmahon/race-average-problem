@@ -105,7 +105,7 @@ to ensure components mount and are displayed as intended.
 
 ### Future Features 
 
-1. Implement a stronger error handling to the input with RegEx to confirm format is typed exactly as intended. 
+1. Implement stronger error handling to the input with RegEx to confirm format is typed exactly as intended. 
 
 # Contributors
 
