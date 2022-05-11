@@ -96,6 +96,11 @@ to ensure components mount and are displayed as intended.
 
 5. Passed test will be shown with green check marks in the command line. 
 
+### Design Inspiration For Time Component 
+
+- Used Bitly's iconic link branding to design the Time Component
+
+
 
 ### Future Features 
 
