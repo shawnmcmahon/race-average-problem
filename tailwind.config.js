@@ -2,7 +2,7 @@ module.exports = {
   content: ["./src/**/*.{html,js,ts,tsx}", "./public/index.html"],
   theme: {
     colors: {
-      'blueSlate': '#273144',
+      'blueSlate': '#0C3042',
       'black': '#000000',
       'blue': '#2A5BD7', 
       'grayBorder': '#E5E7E8',

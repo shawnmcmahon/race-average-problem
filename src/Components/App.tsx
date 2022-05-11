@@ -4,7 +4,7 @@ import TimeSubmit from './TimeSubmit';
 
 const App:FunctionComponent = () => {
   return (
-    <main className="w-100 h-screen bg-[#F6F7F7]">
+    <main className="w-100 h-screen bg-grayDark">
       <Header />
       <TimeSubmit />
     </main>
