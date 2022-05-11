@@ -78,7 +78,7 @@ These features were not required by the spec given but were implemented to impro
   #### Test Coverage: <b>146%</b> (288 Test Lines / 197 Lines of Code)
   
   - Cypress tests located at '../cypress/integration/*'
-  - Jest tests located at '../src/test/*'
+  - Jest tests located at '../src/tests/*'
 
 #### Cypress End-2-End Testing Setup
 
