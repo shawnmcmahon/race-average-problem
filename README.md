@@ -57,7 +57,7 @@ For your convenience, this project has been hosted on Netlify to view without a 
 
   
 ### Wireframe
-![wireframe](https://user-images.githubusercontent.com/73731359/167741867-087aea36-839e-45c5-b0fc-f393acb6b55f.png)
+![wireframe](https://user-images.githubusercontent.com/73731359/167760986-4c9375d1-b1e0-44ea-8f36-f3fb8e6510e0.png)
 
 
 ### Testing 
