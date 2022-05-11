@@ -39,6 +39,8 @@ For your convenience, this project has been hosted on Netlify to view without a 
 5. A new browser window will open with the project hosted at ``http://localhost:3000/``
 
 ### Demo 
+![demo](https://user-images.githubusercontent.com/73731359/167743938-dda186fb-888f-4890-948b-838de45eb8ed.gif)
+
   
 ### Wireframe
 ![wireframe](https://user-images.githubusercontent.com/73731359/167741867-087aea36-839e-45c5-b0fc-f393acb6b55f.png)
