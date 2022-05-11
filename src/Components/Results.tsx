@@ -31,7 +31,7 @@ const Results:FunctionComponent<ResultsPropTypes> = ({raceTimes, timesInMinutes,
           Average Time (min)
         </p>
         <section className="bg-[#F6F7F7] h-28 w-48 mt-2 flex flex-col justify-center rounded-sm font-proximaNovaRegular">
-          <p className="text-center text-2xl text-[#00000]" data-cy="average-value">
+          <p className="text-center text-2xl text-[#000000]" data-cy="average-value">
             {timesInMinutes.length === 1 ? timesInMinutes[0] : averageTimeInMinutes} 
           </p>
         </section>

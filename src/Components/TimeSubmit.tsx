@@ -52,9 +52,9 @@ const TimeSubmit:FunctionComponent = () => {
   return (
     <div>
       <section className="h-96 w-100 bg-[#F6F7F7]">
-        <div className="h-full w-100 ml-8 mr-8 border-b-2 border-[#E5E7E8]">
+        <div className="h-full w-100 ml-8 mr-8 border-b-2 border-[#E5E7E8] md:flex md:flex-col">
           <p className="pt-8 font-proximaNovaRegular text-xl text-[#888A8C]" data-cy="input-label">Race Time</p>
-          <form>
+          <form className="">
             <input 
               className="h-12 w-2/6 max-w-lg mt-2 pl-4 border-[#E5E7E8] border-2 rounded-sm font-proximaNovaRegular focus:outline-none"
               onChange={handleInputChange}
