@@ -62,8 +62,7 @@ For your convenience, this project has been hosted on Netlify to view without a 
 
 These features were not required by the spec given but were implemented to improve the quality of the application. 
 
-1. End-2-End testing implemented with Cypress 
-to ensure components mount and are displayed as intended. 
+1. End-2-End testing implemented with Cypress to ensure components mount and are displayed as intended. 
 2. Unit testing provided with Jest to ensure calculate logic functions as necesary.
 3. Continous integration implemented with CircleCI to ensure all tests pass between commit changes. 
 4. Hosted live on Netlify for easy viewing between multiple team members. 

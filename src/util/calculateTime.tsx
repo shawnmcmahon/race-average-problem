@@ -1,5 +1,5 @@
-const calculateTime = (hours: any, minutes: any, period: string, days: number) => {
-  let totalTime = 0
+const calculateTime = (hours: any, minutes: any, period: string, days: number):number => {
+  let totalTime:number = 0
 
   // Count the amount of hours
   if (hours === 12 && period === 'PM' && days === 1 ) {
