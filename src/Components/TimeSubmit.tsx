@@ -15,7 +15,6 @@ const TimeSubmit:FunctionComponent = () => {
 
   }, [timesInMinutes])
 
-  
   const handleSubmit = (event:ChangeEvent<any>): void => {
     event.preventDefault()
     setWarning('')

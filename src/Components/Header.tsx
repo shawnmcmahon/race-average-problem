@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react'
 import bityLogo from '../assets/images/logo.svg'
 
-
 const Header:FunctionComponent = () => {
   return (
     <header className="bg-blueSlate h-20 w-full" data-cy="header">

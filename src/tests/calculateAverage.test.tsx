@@ -24,4 +24,3 @@ test('calculateAverage should return the correct value for test case #3', () => 
   const average = calculateAverage([26280, 27720, 27718])
   expect(average).toBe(27239)
 })
-

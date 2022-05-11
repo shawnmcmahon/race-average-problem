@@ -65,6 +65,3 @@ describe('TimeSubmit Component', () => {
 })
 
 export default {}
-
-
-
