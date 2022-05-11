@@ -74,6 +74,8 @@ These features were not required by the spec given but were implemented to impro
 10. Functional components and React hooks used to ensure speed and reduced loading times.
 
 ### Testing 
+  
+  #### Test Coverage: <b>146%</b> (288 Test Lines / 197 Lines of Code)
 
 #### Cypress End-2-End Testing Setup
 
