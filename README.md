@@ -58,21 +58,6 @@ For your convenience, this project has been hosted on Netlify to view without a 
 ![wireframe](https://user-images.githubusercontent.com/73731359/167741867-087aea36-839e-45c5-b0fc-f393acb6b55f.png)
 
 
-### Additional Features 
-
-These features were not required by the spec given but were implemented to improve the quality of the application. 
-
-1. End-2-End testing implemented with Cypress to ensure components mount and are displayed as intended. 
-2. Unit testing provided with Jest to ensure calculate logic functions as necesary.
-3. Continous integration implemented with CircleCI to ensure all tests pass between commit changes. 
-4. Hosted live on Netlify for easy viewing between multiple team members. 
-5. Error handling for race times with incorrect formats. Does not allow you to submit a time without a semicolo, a comma, or the word 'DAY'. 
-6. Warning message appears letting the user know the format was incorrect. 
-7. Clear button implemented to clear results without having to refresh. 
-8. Each race time shows its end time as well as how many minutes its it took to complete the race.
-9. Type checking provided by Typescript.  
-10. Functional components and React hooks used to ensure speed and reduced loading times.
-
 ### Testing 
   
   #### Test Coverage: <b>146%</b> (288 Test Lines / 197 Lines of Code)
@@ -108,6 +93,20 @@ These features were not required by the spec given but were implemented to impro
 
 ![designInspiration](https://user-images.githubusercontent.com/73731359/167746525-bbde1aee-d81b-4b45-8ddf-f72792ad9881.png)
 
+### Additional Features 
+
+These features were not required by the spec given but were implemented to improve the quality of the application. 
+
+1. End-2-End testing implemented with Cypress to ensure components mount and are displayed as intended. 
+2. Unit testing provided with Jest to ensure calculate logic functions as necesary.
+3. Continous integration implemented with CircleCI to ensure all tests pass between commit changes. 
+4. Hosted live on Netlify for easy viewing between multiple team members. 
+5. Error handling for race times with incorrect formats. Does not allow you to submit a time without a semicolo, a comma, or the word 'DAY'. 
+6. Warning message appears letting the user know the format was incorrect. 
+7. Clear button implemented to clear results without having to refresh. 
+8. Each race time shows its end time as well as how many minutes its it took to complete the race.
+9. Type checking provided by Typescript.  
+10. Functional components and React hooks used to ensure speed and reduced loading times.
 
 ### Future Features 
 
