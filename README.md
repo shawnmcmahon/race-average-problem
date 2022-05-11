@@ -112,10 +112,6 @@ to ensure components mount and are displayed as intended.
 <table align="left">
   <td> Shawn McMahon <a href="https://www.linkedin.com/in/shawnpmcmahon/">LI</td>
     </tr>
-    </tr>
-<td><img src="https://avatars.githubusercontent.com/u/73731359?v=4" alt="Shawn GH img"
-width="150" height="auto" /></td>
-    </tr>
 </table>
 
 
