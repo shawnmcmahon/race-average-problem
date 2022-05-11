@@ -39,9 +39,10 @@ For your convenience, this project has been hosted on Netlify to view without a 
 5. A new browser window will open with the project hosted at ``http://localhost:3000/``
 
 ### Demo 
-<p height="800">
+ <img height="800">
   ![demo](https://user-images.githubusercontent.com/73731359/167743938-dda186fb-888f-4890-948b-838de45eb8ed.gif)
-</p>
+ </img>
+
 
   
 ### Wireframe
