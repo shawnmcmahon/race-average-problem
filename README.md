@@ -72,6 +72,31 @@ to ensure components mount and are displayed as intended.
 9. Type checking provided by Typescript.  
 10. Functional components and React hooks used to ensure speed and reduced loading times.
 
+### Testing 
+
+#### Cypress End-2-End Testing Setup
+
+1. Follow local setup instructions from above 
+
+2. Navigate to the root directory of this project on your local machine 
+
+3. In the command line, type ``npx cypress open``
+
+4. A Cypress window will open displaying the four test files. Click a test file to run the tests. 
+
+#### Jest Unit Testting Setup
+
+1. Follow local setup instructions from above 
+
+2. Navigate to the root directory of this project on your local machine 
+
+3. To test the calculateTime function, in the command line, type ``calculateTime.test.tsx``
+
+4. To test the calculateAverage function, in the command line, type ``calculateAverage.test.tsx``
+
+5. Passed test will be shown with green check marks in the command line. 
+
+
 ### Future Features 
 
 1. Implement a stronger error handling to the input with RegEx to confirm format is typed exactly as intended. 
