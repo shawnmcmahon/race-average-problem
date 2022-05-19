@@ -103,7 +103,7 @@ These features were not required by the spec given but were implemented to impro
 2. Unit testing provided with Jest to ensure calculate logic functions as necesary.
 3. Continous integration implemented with CircleCI to ensure all tests pass between commit changes. 
 4. Hosted live on Netlify for easy viewing between multiple team members. 
-5. Error handling for race times with incorrect formats. Does not allow you to submit a time without a semicolo, a comma, or the word 'DAY'. 
+5. Error handling for race times with incorrect formats. Does not allow you to submit a time without a semicolon, a comma, or the word 'DAY'. 
 6. Warning message appears letting the user know the format was incorrect. 
 7. Clear button implemented to clear results without having to refresh. 
 8. Each race time shows its end time as well as how many minutes its it took to complete the race.
