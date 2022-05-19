@@ -36,7 +36,7 @@ For your convenience, this project has been hosted on Netlify to view without a 
 
 1. In your command line, navigate to the desired directory and clone this repo.
 
-``https://github.com/shawnmcmahon/race-average-problem.git``
+``git clone https://github.com/shawnmcmahon/race-average-problem.git``
 
 2. Navigate to the root directory of this project using the command below. 
 
